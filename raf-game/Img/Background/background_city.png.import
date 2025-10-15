@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7yssvqho2dq0"
-path="res://.godot/imported/Raf skin1 simple.png-12eaedf304987c8391894846db3b936f.ctex"
+uid="uid://xmkfnul807tv"
+path="res://.godot/imported/background_city.png-7ae94bdd360a5571d982be6c561979f8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Raf skin1 simple.png"
-dest_files=["res://.godot/imported/Raf skin1 simple.png-12eaedf304987c8391894846db3b936f.ctex"]
+source_file="res://Img/Background/background_city.png"
+dest_files=["res://.godot/imported/background_city.png-7ae94bdd360a5571d982be6c561979f8.ctex"]
 
 [params]
 

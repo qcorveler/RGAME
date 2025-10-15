@@ -1,11 +1,11 @@
 [gd_scene load_steps=10 format=3 uid="uid://c6r0x0ayukyoe"]
 
-[ext_resource type="PackedScene" uid="uid://balwv05viq0lw" path="res://Player.tscn" id="1_bexhn"]
-[ext_resource type="Texture2D" uid="uid://diayplunnik13" path="res://Background/Sky_Stars.png" id="1_t7iv1"]
-[ext_resource type="Texture2D" uid="uid://cux3erbarja0r" path="res://Background/Clouds.png" id="2_2nifc"]
-[ext_resource type="Texture2D" uid="uid://xmkfnul807tv" path="res://Background/background_city.png" id="3_wkftn"]
-[ext_resource type="Texture2D" uid="uid://4rcn1kvftsds" path="res://Background/forground_city.png" id="4_q4iis"]
-[ext_resource type="Texture2D" uid="uid://g7d4wecma2u0" path="res://Background/water.png" id="5_m3clv"]
+[ext_resource type="PackedScene" uid="uid://balwv05viq0lw" path="res://Scenes/Player.tscn" id="1_bexhn"]
+[ext_resource type="Texture2D" uid="uid://diayplunnik13" path="res://Img/Background/Sky_Stars.png" id="1_t7iv1"]
+[ext_resource type="Texture2D" uid="uid://cux3erbarja0r" path="res://Img/Background/Clouds.png" id="2_2nifc"]
+[ext_resource type="Texture2D" uid="uid://xmkfnul807tv" path="res://Img/Background/background_city.png" id="3_wkftn"]
+[ext_resource type="Texture2D" uid="uid://4rcn1kvftsds" path="res://Img/Background/forground_city.png" id="4_q4iis"]
+[ext_resource type="Texture2D" uid="uid://g7d4wecma2u0" path="res://Img/Background/water.png" id="5_m3clv"]
 
 [sub_resource type="Gradient" id="Gradient_qhyq2"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)

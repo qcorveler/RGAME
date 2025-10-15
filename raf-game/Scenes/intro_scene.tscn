@@ -1,0 +1,53 @@
+[gd_scene load_steps=7 format=3 uid="uid://gsda4ybkcp72"]
+
+[ext_resource type="FontFile" uid="uid://gkas3n827804" path="res://fonts/PressStart2P-Regular.ttf" id="1_bbocs"]
+[ext_resource type="Script" uid="uid://bibv5acftictp" path="res://Scripts/intro_scene.gd" id="1_lim1r"]
+[ext_resource type="Script" uid="uid://bgv10j1nwtfs1" path="res://Scripts/label.gd" id="2_lim1r"]
+[ext_resource type="AudioStream" uid="uid://diwuid8emjli4" path="res://Sounds/LetterBip.wav" id="4_m538q"]
+[ext_resource type="Script" uid="uid://deyummoc7de3d" path="res://Scripts/bip_sound_player.gd" id="5_aqy4q"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_o8unc"]
+font = ExtResource("1_bbocs")
+
+[node name="IntroScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lim1r")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -427.0
+offset_top = -48.5
+offset_right = 427.0
+offset_bottom = 48.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Dans un monde terrifiant, où le skate n'existe plus, un homme se lève contre l'adversité "
+label_settings = SubResource("LabelSettings_o8unc")
+autowrap_mode = 3
+script = ExtResource("2_lim1r")
+
+[node name="BipSoundPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_m538q")
+script = ExtResource("5_aqy4q")
+
+[connection signal="letter_added" from="Label" to="BipSoundPlayer" method="_on_label_letter_added"]
+[connection signal="text_finished" from="Label" to="." method="_on_label_text_finished"]

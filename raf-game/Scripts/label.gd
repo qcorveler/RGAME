@@ -1,0 +1,25 @@
+extends Label
+
+@export var full_text: String = "Dans un monde terrifiant, où le skate n'existe plus,\nun homme se lève contre l'adversité "
+@export var char_delay := 0.05  # secondes entre chaque lettre
+
+signal text_finished()
+signal letter_added()
+
+var current_index := 0
+var timer := 0.0
+
+func _ready():
+	text = ""
+	set_process(true)
+
+func _process(delta):
+	if current_index < full_text.length():
+		timer += delta
+		if timer >= char_delay:
+			text += full_text[current_index]
+			current_index += 1
+			timer = 0.0
+			letter_added.emit()
+	if current_index >= full_text.length():
+		text_finished.emit()

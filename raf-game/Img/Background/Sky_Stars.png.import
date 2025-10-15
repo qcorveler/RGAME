@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://diayplunnik13"
-path="res://.godot/imported/Sky_Stars.png-84cc41c431266715fab0e553568ccf22.ctex"
+path="res://.godot/imported/Sky_Stars.png-e1dd0698b2d2db3121c93ff425a984da.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Background/Sky_Stars.png"
-dest_files=["res://.godot/imported/Sky_Stars.png-84cc41c431266715fab0e553568ccf22.ctex"]
+source_file="res://Img/Background/Sky_Stars.png"
+dest_files=["res://.godot/imported/Sky_Stars.png-e1dd0698b2d2db3121c93ff425a984da.ctex"]
 
 [params]
 
