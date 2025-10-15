@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b8x2elcr4c53o"
-path="res://.godot/imported/Raf skin1.png-059a0b47774d643e2a36b4d12e44a4d4.ctex"
+uid="uid://cvkw1ke812xfx"
+path="res://.godot/imported/Icon.png-068fdaeeee4ab4ffa4e573c71d1baf4b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Img/Raf skin1.png"
-dest_files=["res://.godot/imported/Raf skin1.png-059a0b47774d643e2a36b4d12e44a4d4.ctex"]
+source_file="res://Img/Credits/Icon.png"
+dest_files=["res://.godot/imported/Icon.png-068fdaeeee4ab4ffa4e573c71d1baf4b.ctex"]
 
 [params]
 

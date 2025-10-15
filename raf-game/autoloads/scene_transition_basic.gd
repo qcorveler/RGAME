@@ -4,7 +4,7 @@ extends CanvasLayer
 var current_scene : String = ''
 
 func _init():
-	current_scene = "intro_scene"
+	current_scene = "start_credits.tscn"
 	
 func _ready():
 	$ColorRect.mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -30,5 +30,7 @@ func go_to_scene(scene: String):
 		$ColorRect, 'modulate:a', 0, switch_duration / 2.0
 	)
 	await tween.finished
+	
+	$ColorRect.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	
 	

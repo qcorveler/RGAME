@@ -11,7 +11,6 @@ var timer := 0.0
 
 func _ready():
 	text = ""
-	set_process(true)
 
 func _process(delta):
 	if current_index < full_text.length():
