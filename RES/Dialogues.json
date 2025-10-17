@@ -1,0 +1,36 @@
+{
+    "chambre_ehpad": {
+      "lines": [
+        {
+          "speaker": "Mr. Corveler",
+          "text": "Aaah, aaahh... c'est vous jeune homme. Vous savez, vous me faites penser à moi quand j'étais jeune. Moi aussi j'ai travaillé à l'EHPAD. Aaah mes 20 ans, c'était il y a si longtemps. J'ai du mal à me souvenir..."
+        },
+        {
+          "speaker": "Infirmier",
+          "text": "Mais oui, c'est pas facile de vous souvenir, c'est normal c'est la vieillesse. 90 ans aujourd'hui en même temps. Bon anniversaire monsieur Corveler."
+        },
+        {
+          "speaker": "Mr. Corveler",
+          "text": "90 ans ?! Déjà ?"
+        },
+        {
+            "speaker": "Infirmier",
+            "text": "Et oui, votre frère va venir aujourd'hui, vous devez être content de le voir. Vous savez qu'il a battu le record du monde de temps passé sur les mains la semaine dernière ? À 92 ans vous vous rendez compte !"
+        },
+        {
+            "speaker": "Mr. Corveler",
+            "text": "Ah bon c'est pas possible ça... Il faut que je vous montre ce que je faisais du temps de ma jeunesse. Attendez moi laissez moi vous montrer."
+        }
+      ]
+    },
+  
+    "level_1": {
+      "lines": [
+        {
+          "speaker": "Frère",
+          "text": "Ok, c’est parti ! Je dois retrouver tous les souvenirs !"
+        }
+      ]
+    }
+  }
+  

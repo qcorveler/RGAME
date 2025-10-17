@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 SceneTransition="*res://autoloads/scene_transition.tscn"
+DialogueLoader="*res://autoloads/dialogue_loader.tscn"
 
 [display]
 

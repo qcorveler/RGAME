@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://b4esevrq60jjm"]
+[gd_scene load_steps=4 format=3 uid="uid://b4esevrq60jjm"]
 
 [ext_resource type="Texture2D" uid="uid://cgtim5h1ucin" path="res://Img/Cinematiques/Ehpad chambre -0.png" id="1_ct34b"]
-[ext_resource type="Script" uid="uid://bn66udwr36kgu" path="res://Scripts/Cinematiques/texture_rect.gd" id="2_w12ta"]
+[ext_resource type="Script" uid="uid://bn66udwr36kgu" path="res://Scripts/Cinematiques/chambre_ehpad.gd" id="2_w12ta"]
+[ext_resource type="PackedScene" uid="uid://c74gt60xgsb7d" path="res://Scenes/UI/dialogue_panel.tscn" id="3_w12ta"]
 
 [node name="EhpadCinematique" type="Control"]
 layout_mode = 3
@@ -10,8 +11,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("2_w12ta")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="DisplayRect" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -19,4 +21,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_ct34b")
-script = ExtResource("2_w12ta")
+
+[node name="DialoguePanel" parent="." instance=ExtResource("3_w12ta")]
+layout_mode = 1
+
+[connection signal="next_dialogue" from="DialoguePanel" to="." method="_on_dialogue_panel_next_dialogue"]

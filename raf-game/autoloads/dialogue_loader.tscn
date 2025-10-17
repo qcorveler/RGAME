@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bcl1t8ab8nbvm"]
+
+[ext_resource type="Script" uid="uid://d2tfn6syg7thi" path="res://autoloads/dialogue_loader.gd" id="1_ymu3v"]
+
+[node name="DialogueLoader" type="Node"]
+script = ExtResource("1_ymu3v")

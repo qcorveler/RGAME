@@ -1,6 +1,6 @@
 extends Label
 
-@export var full_text: String = "Dans un monde terrifiant, où le skate n'existe plus,\nun homme se lève contre l'adversité "
+@export var full_text: String = "- Monsieur Corveler ?\n\nMonsieur Corveler, réveillez vous... C'est l'heure de votre crème anti-hémorroïdes..."
 @export var char_delay := 0.05  # secondes entre chaque lettre
 
 signal text_finished()

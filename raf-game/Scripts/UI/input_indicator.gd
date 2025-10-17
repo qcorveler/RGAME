@@ -10,6 +10,11 @@ var t := 0.0
 @onready var icon := $InputIcon
 
 var active := false
+var inversed_color := false
+
+func set_inversed_color(value: bool):
+	inversed_color = value
+	icon.material.set("shader_param/invert_colors", value)
 
 func set_active(value: bool):
 	active = value
@@ -19,6 +24,7 @@ func set_active(value: bool):
 func _ready():
 	icon.modulate.a = alpha_max
 	icon.scale = Vector2.ONE
+	set_inversed_color(inversed_color)
 
 func _physics_process(delta):
 	if not active:

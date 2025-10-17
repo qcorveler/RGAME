@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bibv5acftictp" path="res://Scripts/intro_scene.gd" id="1_mgu71"]
 [ext_resource type="FontFile" uid="uid://gkas3n827804" path="res://fonts/PressStart2P-Regular.ttf" id="2_3nlno"]
-[ext_resource type="Script" uid="uid://bgv10j1nwtfs1" path="res://Scripts/label.gd" id="3_net45"]
+[ext_resource type="Script" uid="uid://bgv10j1nwtfs1" path="res://Scripts/intro_scene_text.gd" id="3_net45"]
 [ext_resource type="AudioStream" uid="uid://diwuid8emjli4" path="res://Sounds/LetterBip.wav" id="4_qa2tj"]
 [ext_resource type="Script" uid="uid://deyummoc7de3d" path="res://Scripts/bip_sound_player.gd" id="5_0dxeh"]
 [ext_resource type="PackedScene" uid="uid://bcivjodw5wd0w" path="res://Scenes/UI/input_indicator.tscn" id="6_cu8k6"]
@@ -28,7 +28,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="Label" type="Label" parent="."]
+[node name="IntroSceneText" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -57,5 +57,5 @@ offset_top = -75.0
 offset_right = -85.0
 offset_bottom = -75.0
 
-[connection signal="letter_added" from="Label" to="BipSoundPlayer" method="_on_label_letter_added"]
-[connection signal="text_finished" from="Label" to="." method="_on_label_text_finished"]
+[connection signal="letter_added" from="IntroSceneText" to="BipSoundPlayer" method="_on_label_letter_added"]
+[connection signal="text_finished" from="IntroSceneText" to="." method="_on_label_text_finished"]
