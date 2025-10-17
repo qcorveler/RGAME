@@ -1,60 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://balwv05viq0lw"]
+[gd_scene load_steps=4 format=3 uid="uid://balwv05viq0lw"]
 
 [ext_resource type="Script" uid="uid://setf7bqajpkw" path="res://Scripts/player.gd" id="1_kpjcp"]
-[ext_resource type="Texture2D" uid="uid://b8x2elcr4c53o" path="res://Img/Skins/Raf skin1.png" id="2_kpjcp"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_kne1u"]
-atlas = ExtResource("2_kpjcp")
-region = Rect2(0, 0, 18, 27)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_e80uo"]
-atlas = ExtResource("2_kpjcp")
-region = Rect2(18, 0, 18, 27)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_kpjcp"]
-atlas = ExtResource("2_kpjcp")
-region = Rect2(36, 0, 18, 27)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_cxr5p"]
-atlas = ExtResource("2_kpjcp")
-region = Rect2(36, 0, 18, 27)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tdg3f"]
-atlas = ExtResource("2_kpjcp")
-region = Rect2(0, 27, 18, 27)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_dtqjt"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_kne1u")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_e80uo")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 3.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_kpjcp")
-}],
-"loop": true,
-"name": &"jump",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_cxr5p")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_tdg3f")
-}],
-"loop": true,
-"name": &"run",
-"speed": 8.0
-}]
+[ext_resource type="PackedScene" uid="uid://dubqxfeqkucgi" path="res://Scenes/Personnages/Skins/skin_robe_de_chambre.tscn" id="2_j11si"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kpjcp"]
 size = Vector2(48, 93)
@@ -62,12 +9,7 @@ size = Vector2(48, 93)
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_kpjcp")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(4, 4)
-sprite_frames = SubResource("SpriteFrames_dtqjt")
-animation = &"run"
-autoplay = "idle"
-frame_progress = 0.46398625
+[node name="SkinRobeDeChambre" parent="." instance=ExtResource("2_j11si")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 7.5)

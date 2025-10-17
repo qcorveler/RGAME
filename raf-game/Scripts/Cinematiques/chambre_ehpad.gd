@@ -37,7 +37,7 @@ func _on_dialogue_panel_next_dialogue() -> void:
 		dialoguePanel.set_speaker_name(scene_dialogues[dialogue_index]["speaker"])
 		dialoguePanel.set_dialogue_text(scene_dialogues[dialogue_index]["text"])
 	else :
-		#next scene
+		dialoguePanel.set_speaker_name("")
+		dialoguePanel.set_dialogue_text("")
 		SceneTransition.go_to_scene("Levels/Level")
-		pass
 	
