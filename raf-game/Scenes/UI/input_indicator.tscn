@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://bcivjodw5wd0w"]
+
+[ext_resource type="Texture2D" uid="uid://bbk3vf564psdu" path="res://Img/util/keyboard_space.png" id="1_jwpcu"]
+[ext_resource type="Script" uid="uid://cfqgkd3mgdlnw" path="res://Scripts/UI/input_indicator.gd" id="2_c181m"]
+
+[node name="InputIndicator" type="Control"]
+layout_mode = 3
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 0
+script = ExtResource("2_c181m")
+
+[node name="InputIcon" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -120.0
+offset_top = -106.0
+offset_right = -56.0
+offset_bottom = -42.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("1_jwpcu")

@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://b4esevrq60jjm"]
+
+[ext_resource type="Texture2D" uid="uid://cgtim5h1ucin" path="res://Img/Cinematiques/Ehpad chambre -0.png" id="1_ct34b"]
+[ext_resource type="Script" uid="uid://bn66udwr36kgu" path="res://Scripts/Cinematiques/texture_rect.gd" id="2_w12ta"]
+
+[node name="EhpadCinematique" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ct34b")
+script = ExtResource("2_w12ta")

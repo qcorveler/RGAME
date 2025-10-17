@@ -8,6 +8,7 @@ signal letter_added()
 
 var current_index := 0
 var timer := 0.0
+var finished := false
 
 func _ready():
 	text = ""
@@ -20,5 +21,6 @@ func _process(delta):
 			current_index += 1
 			timer = 0.0
 			letter_added.emit()
-	if current_index >= full_text.length():
+	if current_index >= full_text.length() and not finished:
 		text_finished.emit()
+		finished = true
