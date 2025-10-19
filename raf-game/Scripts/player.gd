@@ -1,12 +1,13 @@
 extends CharacterBody2D
 
 @export var gravity = 1500
-@export var speed = 50 #500
+@export var speed = 200 #500
 @export var jump_velocity = 0 #-1000
 
 @export var acceleration = 0.2
 
-@onready var skin = $SkinRobeDeChambre
+@onready var skin = $Skin
+@onready var collisionBox : CollisionShape2D = $CollisionShape2D
 
 func _physics_process(delta) :
 	if !is_on_floor() :
@@ -20,7 +21,7 @@ func _physics_process(delta) :
 	
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = jump_velocity
-		change_skin("skin_ehpad")
+		#change_skin("skin_ehpad")
 	
 	update_animation(direction)
 	move_and_slide()
@@ -38,7 +39,12 @@ func change_skin(skin_name: String):
 	if skin:
 		skin.queue_free()
 
-	var new_skin = load("res://Scenes/Personnages/Skins/%s.tscn" % skin_name).instantiate()
+	var new_skin = load("res://Scenes/Personnages/Player/Skins/%s.tscn" % skin_name).instantiate()
 	add_child(new_skin)
 	new_skin.name = "Skin"
 	skin = new_skin
+
+func set_skin_size(size):
+	skin.apply_scale(Vector2(size, size))
+	collisionBox.apply_scale(Vector2(size, size))
+	

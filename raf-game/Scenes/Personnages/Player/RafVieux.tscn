@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://by4hv48lgyhg2"]
+
+[ext_resource type="Script" uid="uid://setf7bqajpkw" path="res://Scripts/player.gd" id="1_uwy5g"]
+[ext_resource type="PackedScene" uid="uid://csgisq117w3c6" path="res://Scenes/Personnages/Player/Skins/skin_ehpad.tscn" id="2_uwy5g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kpjcp"]
+size = Vector2(72, 110)
+
+[node name="PlayerRafVieux" type="CharacterBody2D"]
+script = ExtResource("1_uwy5g")
+
+[node name="Skin" parent="." instance=ExtResource("2_uwy5g")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(6, 5)
+shape = SubResource("RectangleShape2D_kpjcp")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+limit_left = 0
+limit_top = 0
+limit_bottom = 0
+limit_smoothed = true
+position_smoothing_enabled = true

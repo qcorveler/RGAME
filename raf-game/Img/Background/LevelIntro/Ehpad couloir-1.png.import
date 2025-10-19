@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://g7d4wecma2u0"
-path="res://.godot/imported/water.png-498269622862961bc2f24cb4555d0875.ctex"
+uid="uid://flp0e0f07g3g"
+path="res://.godot/imported/Ehpad couloir-1.png-45e2c95b039b2ed4e1e4843afac94b45.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Img/Background/water.png"
-dest_files=["res://.godot/imported/water.png-498269622862961bc2f24cb4555d0875.ctex"]
+source_file="res://Img/Background/LevelIntro/Ehpad couloir-1.png"
+dest_files=["res://.godot/imported/Ehpad couloir-1.png-45e2c95b039b2ed4e1e4843afac94b45.ctex"]
 
 [params]
 

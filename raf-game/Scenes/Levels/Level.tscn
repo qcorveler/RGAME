@@ -1,12 +1,12 @@
 [gd_scene load_steps=11 format=3 uid="uid://c6r0x0ayukyoe"]
 
 [ext_resource type="PackedScene" uid="uid://b2m46f548yywj" path="res://Scenes/UI/pause_menu.tscn" id="1_4nh8f"]
-[ext_resource type="Texture2D" uid="uid://diayplunnik13" path="res://Img/Background/Sky_Stars.png" id="2_etd3f"]
-[ext_resource type="Texture2D" uid="uid://cux3erbarja0r" path="res://Img/Background/Clouds.png" id="3_d3u4r"]
-[ext_resource type="Texture2D" uid="uid://xmkfnul807tv" path="res://Img/Background/background_city.png" id="4_y1810"]
-[ext_resource type="Texture2D" uid="uid://4rcn1kvftsds" path="res://Img/Background/forground_city.png" id="5_vkf7a"]
-[ext_resource type="Texture2D" uid="uid://g7d4wecma2u0" path="res://Img/Background/water.png" id="6_rbpxy"]
-[ext_resource type="PackedScene" uid="uid://balwv05viq0lw" path="res://Scenes/Personnages/Player.tscn" id="7_3jhef"]
+[ext_resource type="Texture2D" uid="uid://diayplunnik13" path="res://Img/Background/city/Sky_Stars.png" id="2_etd3f"]
+[ext_resource type="Texture2D" uid="uid://cux3erbarja0r" path="res://Img/Background/city/Clouds.png" id="3_d3u4r"]
+[ext_resource type="Texture2D" uid="uid://xmkfnul807tv" path="res://Img/Background/city/background_city.png" id="4_y1810"]
+[ext_resource type="Texture2D" uid="uid://4rcn1kvftsds" path="res://Img/Background/city/forground_city.png" id="5_vkf7a"]
+[ext_resource type="Texture2D" uid="uid://g7d4wecma2u0" path="res://Img/Background/city/water.png" id="6_rbpxy"]
+[ext_resource type="PackedScene" uid="uid://balwv05viq0lw" path="res://Scenes/Personnages/Player/Player.tscn" id="7_3jhef"]
 
 [sub_resource type="Gradient" id="Gradient_qhyq2"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)

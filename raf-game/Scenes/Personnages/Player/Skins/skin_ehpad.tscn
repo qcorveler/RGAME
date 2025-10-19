@@ -1,30 +1,30 @@
 [gd_scene load_steps=10 format=3 uid="uid://csgisq117w3c6"]
 
-[ext_resource type="Script" uid="uid://ca7vk1r2fiib5" path="res://Scripts/skin.gd" id="1_xcqih"]
-[ext_resource type="Texture2D" uid="uid://cvghahtdwqlq4" path="res://Img/Skins/Raf ieuv.png" id="2_xcqih"]
+[ext_resource type="Script" uid="uid://ca7vk1r2fiib5" path="res://Scripts/skin.gd" id="1_clydb"]
+[ext_resource type="Texture2D" uid="uid://cvghahtdwqlq4" path="res://Img/Skins/Raf ieuv.png" id="2_ns0fc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p1qrq"]
-atlas = ExtResource("2_xcqih")
+atlas = ExtResource("2_ns0fc")
 region = Rect2(0, 0, 21, 30)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d2iui"]
-atlas = ExtResource("2_xcqih")
+atlas = ExtResource("2_ns0fc")
 region = Rect2(21, 30, 21, 30)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8h3e3"]
-atlas = ExtResource("2_xcqih")
+atlas = ExtResource("2_ns0fc")
 region = Rect2(0, 0, 21, 30)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lvlew"]
-atlas = ExtResource("2_xcqih")
+atlas = ExtResource("2_ns0fc")
 region = Rect2(21, 0, 21, 30)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j01th"]
-atlas = ExtResource("2_xcqih")
+atlas = ExtResource("2_ns0fc")
 region = Rect2(0, 30, 21, 30)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a4lfm"]
-atlas = ExtResource("2_xcqih")
+atlas = ExtResource("2_ns0fc")
 region = Rect2(21, 30, 21, 30)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_siin0"]
@@ -63,8 +63,8 @@ animations = [{
 "speed": 3.0
 }]
 
-[node name="SkinRobeDeChambre" type="Node2D"]
-script = ExtResource("1_xcqih")
+[node name="SkinEhpad" type="Node2D"]
+script = ExtResource("1_clydb")
 
 [node name="SkinSprite" type="AnimatedSprite2D" parent="."]
 scale = Vector2(4, 4)
