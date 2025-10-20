@@ -39,5 +39,5 @@ func _on_dialogue_panel_next_dialogue() -> void:
 	else :
 		dialoguePanel.set_speaker_name("")
 		dialoguePanel.set_dialogue_text("")
-		SceneTransition.go_to_scene("Levels/Level")
+		SceneTransition.go_to_scene("Levels/LevelIntro")
 	

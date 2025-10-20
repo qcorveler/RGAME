@@ -44,7 +44,10 @@ func change_skin(skin_name: String):
 	new_skin.name = "Skin"
 	skin = new_skin
 
-func set_skin_size(size):
-	skin.apply_scale(Vector2(size, size))
-	collisionBox.apply_scale(Vector2(size, size))
+func set_skin_scale(skinScale):
+	skin.apply_scale(Vector2(skinScale, skinScale))
+	collisionBox.apply_scale(Vector2(skinScale, skinScale))
+
+func get_skin_size():
+	return skin.get_skin_size()
 	

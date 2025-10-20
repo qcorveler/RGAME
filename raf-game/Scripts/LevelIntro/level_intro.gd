@@ -13,6 +13,8 @@ extends Node2D
 @onready var player = $PlayerRafVieux
 @onready var cam : Camera2D = player.get_node("Camera2D")
 
+@onready var infirmier = $Infirmier
+
 func _ready():
 	# Récupération du ratio
 	var screen_size = get_viewport_rect().size
@@ -28,9 +30,6 @@ func _ready():
 	groundSprite.position.y = groundY
 	groundCollision.shape.set("a", Vector2(0, groundY))
 	groundCollision.shape.set("b", Vector2(tex_size.x*ratio, groundY))
-	print(groundCollision.shape.get("a"))
-	print(groundCollision.position)
-	print(groundSprite.position)
 	
 	# Gestion du mur de droite
 	var maxX = (groundSprite.texture.get_size().x - 30)*ratio
@@ -47,4 +46,9 @@ func _ready():
 	cam.limit_right = maxX + 30*ratio
 	
 	# Gestion du joueur
-	player.set_skin_size(ratio/3)
+	player.set_skin_scale(ratio/3)
+	player.position = Vector2(700, groundY - (player.get_skin_size().y) * (ratio/3) - 20)
+	
+	# Gestion de l'infirmier
+	infirmier.apply_scale(Vector2(ratio/2,ratio/2))
+	infirmier.position = Vector2(200, groundY - (infirmier.get_skin_size().y) * (ratio/2) - 20)
