@@ -1,4 +1,4 @@
-extends AudioStreamPlayer2D
+extends AudioStreamPlayer
 
 # Joue un son de bip
 func _on_label_letter_added() -> void:

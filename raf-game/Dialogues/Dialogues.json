@@ -24,13 +24,63 @@
 	  ]
 	},
   
-	"level_1": {
-	  "lines": [
-		{
-		  "speaker": "Frère",
-		  "text": "Ok, c’est parti ! Je dois retrouver tous les souvenirs !"
+	"level_intro": {
+		"debut" : {
+			"lines": [
+				{
+					"speaker": "M. Corveler",
+					"text": "Allez, faut que je vous montre quelque chose, je viens de m'en souvenir !"
+				}
+			]
+		},
+		"saint_malo" : {
+			"lines": [
+				{
+				  "speaker": "M. Corveler",
+				  "text": "Tiens, il me rappelle quelque chose ce tableau..."
+				},
+				{
+					"speaker": "Infirmier",
+					"text": "C'est une photo prise dans une ville en Bretagne"
+				}
+			]
+		},
+		"enki_bilal" : {
+			"lines": [
+				{
+				  "speaker": "M. Corveler",
+				  "text": "Elle est plutôt jolie cette affiche, j'ai l'impression de l'avoir déjà vue quelque part."
+				}
+			]
+		},
+		"vieille_nue" : {
+			"lines": [
+				{
+				  "speaker": "M. Corveler",
+				  "text": "Bonjour Madame, je ne sais pas pourquoi mais vous me rappelez quelqu'un aujourd'hui."
+				},
+				{
+					"speaker" : "Infirmier",
+					"text": "Est ce que quelqu'un peut aider madame Blumberg à se rhabiller s'il vous plaît ??"
+				}
+			]
+		},
+		"minecraft" : {
+			"lines": [
+				{
+				  "speaker": "M. Corveler",
+				  "text": "Décidémement, c'est bizarre, ça me fait penser à un jeu vidéo auquel j'ai du jouer quand j'étais jeune. Je ne me souviens plus du nom..."
+				},
+				{
+					"speaker": "Infirmier",
+					"text": "Vous avez beaucoup de souvenir de votre jeunesse aujourd'hui."
+				},
+				{
+					"speaker": "M. Corveler",
+					"text": "Mais oui, je dois trouver l'ordinateur pour vous montrer quelque chose !"
+				}
+			]
 		}
-	  ]
 	}
   }
   

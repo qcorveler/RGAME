@@ -12,17 +12,22 @@ extends CharacterBody2D
 func _physics_process(delta) :
 	if !is_on_floor() :
 		velocity.y = clamp(velocity.y + gravity*delta, -500, 500)
+		
+	var direction
 	
-	var direction = Input.get_axis("move_left", "move_right")
-	if direction !=0 :
-		skin.set_direction(direction == -1)
-	
-	velocity.x = lerp(velocity.x, direction*speed, acceleration)
-	
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = jump_velocity
-		#change_skin("skin_ehpad")
-	
+	if !GameState.dialogue_active :
+		direction = Input.get_axis("move_left", "move_right")
+		if direction !=0 :
+			skin.set_direction(direction == -1)
+		
+		velocity.x = lerp(velocity.x, direction*speed, acceleration)
+		
+		if Input.is_action_just_pressed("jump") and is_on_floor():
+			velocity.y = jump_velocity
+	else :
+		direction = 0.0
+		velocity.x = lerp(velocity.x, direction*speed, acceleration)
+			
 	update_animation(direction)
 	move_and_slide()
 	

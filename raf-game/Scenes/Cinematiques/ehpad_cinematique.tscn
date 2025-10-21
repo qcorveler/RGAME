@@ -25,4 +25,4 @@ texture = ExtResource("1_ct34b")
 [node name="DialoguePanel" parent="." instance=ExtResource("3_w12ta")]
 layout_mode = 1
 
-[connection signal="next_dialogue" from="DialoguePanel" to="." method="_on_dialogue_panel_next_dialogue"]
+[connection signal="lines_finished" from="DialoguePanel" to="." method="_on_dialogue_panel_lines_finished"]

@@ -74,6 +74,6 @@ offset_top = 1.0
 offset_right = -1.0
 offset_bottom = 1.0
 
-[node name="BipSoundPlayer" type="AudioStreamPlayer2D" parent="."]
+[node name="BipSoundPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_1h2o0")
 script = ExtResource("6_o4i36")
