@@ -33,3 +33,38 @@ Tout au fond du couloir, il atteint l'ordinateur. On lui demande un mot de passe
 Il doit alors retourner au début du niveau, ouvrir son casier, trouver le mot de passe sur une note puis retourner à la fin du niveau. 
 
 Il se fait alors entre guillemet aspirer par l'ordinateur et se retrouve dans le niveau 1.
+
+### Niveau 1 - 
+
+### Niveau 2 -
+
+### Niveau 3 -
+
+### ...
+
+## Idées de niveaux
+Un niveau streetfighter II avec des ennemis comme ryu ou dhalsim (ken ou blanka aussi -> Musique de Guile)
+
+Un niveau avec une tortue vite qui course raf dans une sorte de décors de battlegame super mario bros 3
+
+Un clin d'œil à pokémon ?
+
+Un clin d'œil au pilier
+
+Un clin d'œil à one piece ?
+
+Sauter dans des buissons
+
+Niveau avec 2 joueurs (qt1 et raf) -> petit frère
+
+Ref à fight club
+
+ref sauter dans des buissons
+
+ref à MACBA 
+
+ref à l'escalade
+
+ref à crozon et au toit du monde
+
+ref à binding of isaacx
