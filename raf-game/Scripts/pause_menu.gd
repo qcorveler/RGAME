@@ -9,12 +9,13 @@ func _ready():
 		child.process_mode = Node.PROCESS_MODE_WHEN_PAUSED
 
 func pause_unpause():
-	pause = !pause
-	get_tree().paused = pause
-	if pause :
-		show()
-	else:
-		hide()
+	if GameState.game_pausable :
+		pause = !pause
+		get_tree().paused = pause
+		if pause :
+			show()
+		else:
+			hide()
 	
 func _input(event):
 	if event.is_action_pressed("pause"):

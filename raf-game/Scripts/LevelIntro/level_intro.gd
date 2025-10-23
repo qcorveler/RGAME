@@ -110,4 +110,5 @@ func _input(event: InputEvent) -> void:
 			dialoguePanel.set_lines(scene_dialogues["minecraft"]["lines"])
 			dialoguePanel.set_active(true)
 		if computer :
-			screen.toggle_visible()
+			if !GameState.wait_player_input :
+				screen.toggle_visible()

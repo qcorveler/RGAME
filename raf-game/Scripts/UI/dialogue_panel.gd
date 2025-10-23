@@ -57,7 +57,7 @@ func _ready() -> void:
 	inputIndicator.set_black(true) # Mets l'icon de l'indicateur en noir
 
 func _input(event):
-	if event.is_action_pressed("ui_accept") and finished :
+	if event.is_action_pressed("ui_accept") and finished and !GameState.wait_player_input:
 		await fade_out_texts(1)
 		dialogueLabel.modulate.a = 1
 		finished = false

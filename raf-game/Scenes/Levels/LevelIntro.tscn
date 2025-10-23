@@ -99,6 +99,7 @@ player_path = NodePath("../PlayerRafVieux")
 
 [node name="PlayerRafVieux" parent="World" instance=ExtResource("8_jroud")]
 collision_mask = 3
+speed = 1000
 metadata/_edit_group_ = true
 
 [node name="UI" type="CanvasLayer" parent="."]
@@ -107,7 +108,7 @@ metadata/_edit_group_ = true
 
 [node name="DialoguePanel" parent="UI" instance=ExtResource("10_0mj1e")]
 
+[node name="Screen" parent="UI" instance=ExtResource("12_5bvio")]
+
 [node name="PauseMenu" parent="UI" instance=ExtResource("2_jroud")]
 visible = false
-
-[node name="Screen" parent="UI" instance=ExtResource("12_5bvio")]
