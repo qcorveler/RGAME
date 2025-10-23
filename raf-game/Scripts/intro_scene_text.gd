@@ -20,6 +20,7 @@ func _process(delta):
 			text += full_text[current_index]
 			current_index += 1
 			timer = 0.0
+			print("emit")
 			letter_added.emit()
 	if current_index >= full_text.length() and not finished:
 		text_finished.emit()

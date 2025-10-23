@@ -21,9 +21,10 @@ extends Node2D
 
 @onready var dialoguePanel = ui.get_node("DialoguePanel")
 @onready var inputIndicator = ui.get_node("InputIndicator")
+@onready var screen = ui.get_node("Screen")
 
 var dialogue_index := 0
-var scene_dialogues = DialogueLoader.dialogues["level_intro"]
+@onready var scene_dialogues = DialogueLoader.dialogues["level_intro"]
 
 # Variable permettant de savoir si le joueur se trouve devant un objet interactif
 var saint_malo : bool = false
@@ -76,6 +77,9 @@ func _ready():
 	
 	# Gestion du panel de dialogue
 	dialoguePanel.set_active(false)
+	
+	# Gestion de l'écran d'ordinateur
+	screen.set_visible(false)
 
 func _process(_delta):
 	# Tableau Saint Malo
@@ -85,7 +89,7 @@ func _process(_delta):
 	minecraft = 5050 <= player.position.x and player.position.x <= 5500
 	computer = player.position.x >= 7300
 	
-	if saint_malo or enki_bilal or vieille_nue or minecraft :
+	if saint_malo or enki_bilal or vieille_nue or minecraft or computer:
 		inputIndicator.set_icon(load("res://Img/util/keyboard_a.png"))
 		inputIndicator.set_active(true)
 	else :
@@ -105,3 +109,5 @@ func _input(event: InputEvent) -> void:
 		if minecraft :
 			dialoguePanel.set_lines(scene_dialogues["minecraft"]["lines"])
 			dialoguePanel.set_active(true)
+		if computer :
+			screen.toggle_visible()

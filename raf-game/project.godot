@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="RafGame"
-run/main_scene="uid://udhx2mx7r8mp"
+run/main_scene="uid://j3vno6m6c6ng"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 

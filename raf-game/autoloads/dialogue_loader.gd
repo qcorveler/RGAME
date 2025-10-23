@@ -2,6 +2,8 @@ extends Node
 
 var dialogues = {}
 
+#signal dialogues_loaded
+
 func _ready():
 	load_dialogues()
 
@@ -13,6 +15,7 @@ func load_dialogues():
 		if dialogues == null:
 			push_error("Erreur de parsing JSON !")
 		else:
+			#dialogues_loaded.emit()
 			print("Dialogues chargés :", dialogues.keys())
 	else:
 		push_error("Impossible de lire dialogues.json")
