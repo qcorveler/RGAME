@@ -26,12 +26,15 @@ extends Node2D
 var dialogue_index := 0
 @onready var scene_dialogues = DialogueLoader.dialogues["level_intro"]
 
+var screen_reached : bool = false
+
 # Variable permettant de savoir si le joueur se trouve devant un objet interactif
 var saint_malo : bool = false
 var enki_bilal : bool = false
 var minecraft : bool = false
 var vieille_nue : bool = false
 var computer : bool = false
+var storage : bool = false
 
 func _ready():
 	# Récupération du ratio
@@ -83,20 +86,21 @@ func _ready():
 
 func _process(_delta):
 	# Tableau Saint Malo
-	saint_malo = 850 <= player.position.x and player.position.x <= 1200
+	saint_malo = 850 <= player.position.x and player.position.x <= 1200 and !screen_reached
 	enki_bilal = 3250 <= player.position.x and player.position.x <= 3600
 	vieille_nue = 4340 <= player.position.x and player.position.x <= 4750
 	minecraft = 5050 <= player.position.x and player.position.x <= 5500
+	storage = 950 <= player.position.x and player.position.x <=1100 and screen_reached
 	computer = player.position.x >= 7300
 	
-	if saint_malo or enki_bilal or vieille_nue or minecraft or computer:
+	if saint_malo or enki_bilal or vieille_nue or minecraft or computer or storage :
 		inputIndicator.set_icon(load("res://Img/util/keyboard_a.png"))
 		inputIndicator.set_active(true)
 	else :
 		inputIndicator.set_active(false)
 
 func _input(event: InputEvent) -> void:
-	if (event.is_action_pressed("interact_a")):
+	if event.is_action_pressed("interact_a") and !GameState.wait_player_input:
 		if saint_malo :
 			dialoguePanel.set_lines(scene_dialogues["saint_malo"]["lines"])
 			dialoguePanel.set_active(true)
@@ -110,5 +114,11 @@ func _input(event: InputEvent) -> void:
 			dialoguePanel.set_lines(scene_dialogues["minecraft"]["lines"])
 			dialoguePanel.set_active(true)
 		if computer :
+			dialoguePanel.set_lines(scene_dialogues["computer"]["lines"])
+			dialoguePanel.set_active(true)
 			if !GameState.wait_player_input :
+				screen_reached = true
 				screen.toggle_visible()
+		if storage :
+			dialoguePanel.set_lines(scene_dialogues["storage"]["lines"])
+			dialoguePanel.set_active(true)

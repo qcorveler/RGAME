@@ -80,6 +80,22 @@
 					"text": "Mais oui, je dois trouver l'ordinateur pour vous montrer quelque chose !"
 				}
 			]
+		},
+		"computer" : {
+			"lines" : [
+				{
+				  "speaker": "M. Corveler",
+				  "text": "Mince, qu'est ce que c'est mon mot de passe déjà ?... J'ai bien dû le noter quelque part..."
+				}
+			]
+		},
+		"storage" : {
+			"lines" : [
+				{
+				  "speaker": "M. Corveler",
+				  "text": "Ah voilà le mot de passe : TaiTa"
+				}
+			]
 		}
 	}
   }

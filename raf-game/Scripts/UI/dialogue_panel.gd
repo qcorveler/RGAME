@@ -64,17 +64,24 @@ func _input(event):
 		dialogueLabel.visible_ratio = 0 # Rien n'est visible au début
 		inputIndicator.set_active(false)
 		next_dialogue_line()
+	if event.is_action_pressed("ui_cancel") and GameState.wait_player_input:
+		dialogueLabel.modulate.a = 1
+		finished = false
+		dialogueLabel.visible_ratio = 0 # Rien n'est visible au début
+		inputIndicator.set_active(false)
+		set_active(false)
 
 func _process(delta: float) :
 	timer += delta
-	if dialogueLabel.visible_ratio < 1 :
+	if dialogueLabel.visible_ratio < 1 and GameState.dialogue_active:
 		if timer >= char_delay:
 			dialogueLabel.visible_characters += 1
 			bipSoundPlayer.play_sound()
 			timer = 0.0
 	else:
 		if not finished :
-			inputIndicator.set_active(true)
+			if !GameState.wait_player_input:
+				inputIndicator.set_active(true)
 			finished = true
 
 func fade_out_texts(duration:float):

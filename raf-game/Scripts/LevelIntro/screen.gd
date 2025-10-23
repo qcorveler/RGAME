@@ -13,7 +13,6 @@ func toggle_visible() :
 	GameState.dialogue_active = vis
 	GameState.wait_player_input = vis
 	GameState.game_pausable = !vis
-	GameState.level_intro_screen_reached = true
 
 @export var secret_char: String = "•"        # caractère affiché pour chaque lettre
 @export var cursor_char: String = "_"        # underscore clignotant
