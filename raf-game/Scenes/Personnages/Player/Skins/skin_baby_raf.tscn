@@ -1,0 +1,67 @@
+[gd_scene load_steps=9 format=3 uid="uid://yrty7hjpnhvw"]
+
+[ext_resource type="Script" uid="uid://ca7vk1r2fiib5" path="res://Scripts/skin.gd" id="1_7kfym"]
+[ext_resource type="Texture2D" uid="uid://mbte28wwu7cs" path="res://Img/Skins/BabyRaf.png" id="2_7kfym"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uqo0j"]
+atlas = ExtResource("2_7kfym")
+region = Rect2(0, 0, 18, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yfrl8"]
+atlas = ExtResource("2_7kfym")
+region = Rect2(18, 0, 18, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m4yx5"]
+atlas = ExtResource("2_7kfym")
+region = Rect2(0, 27, 18, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yqn28"]
+atlas = ExtResource("2_7kfym")
+region = Rect2(0, 27, 18, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tb7d8"]
+atlas = ExtResource("2_7kfym")
+region = Rect2(18, 27, 18, 27)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_siin0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uqo0j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yfrl8")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m4yx5")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yqn28")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tb7d8")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[node name="SkinRobeDeChambre" type="Node2D"]
+script = ExtResource("1_7kfym")
+
+[node name="SkinSprite" type="AnimatedSprite2D" parent="."]
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_siin0")
+animation = &"run"
+autoplay = "idle"
+frame_progress = 0.9567007
