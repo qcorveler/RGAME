@@ -1,16 +1,75 @@
-[gd_scene load_steps=4 format=3 uid="uid://bmm0ung1idq1m"]
+[gd_scene load_steps=9 format=3 uid="uid://bmm0ung1idq1m"]
 
 [ext_resource type="Script" uid="uid://bmp4vyb7ac0vk" path="res://Scripts/Level1/level_1.gd" id="1_4dpyx"]
 [ext_resource type="PackedScene" uid="uid://balwv05viq0lw" path="res://Scenes/Personnages/Player/Player.tscn" id="1_tlcug"]
+[ext_resource type="Texture2D" uid="uid://kelqe2yy72ii" path="res://Img/Background/level1/Level1.png" id="2_iixi8"]
 [ext_resource type="PackedScene" uid="uid://b2m46f548yywj" path="res://Scenes/UI/pause_menu.tscn" id="3_3mqfk"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cyadu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_iixi8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_cyadu"]
+a = Vector2(0, -1)
+b = Vector2(1, -2102)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_xgxfi"]
+a = Vector2(-2, -2100)
+b = Vector2(0, 0)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_iixi8"]
+a = Vector2(-1.9073486e-06, 517)
+b = Vector2(3734, 517)
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_4dpyx")
 
 [node name="World" type="Node2D" parent="."]
 
+[node name="Background" type="Node2D" parent="World"]
+
+[node name="AnimatedBackground" type="AnimatedSprite2D" parent="World/Background"]
+position = Vector2(1866.9998, -401.99997)
+scale = Vector2(3.646701, 3.646701)
+sprite_frames = SubResource("SpriteFrames_cyadu")
+
+[node name="WallLeft" type="StaticBody2D" parent="World"]
+position = Vector2(0, 648)
+collision_layer = 2
+collision_mask = 3
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/WallLeft"]
+position = Vector2(0, 1)
+shape = SubResource("SegmentShape2D_cyadu")
+
+[node name="WallRight" type="StaticBody2D" parent="World"]
+position = Vector2(3734, 648)
+collision_layer = 2
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/WallRight"]
+position = Vector2(1, 0)
+shape = SubResource("SegmentShape2D_xgxfi")
+
+[node name="Ground" type="StaticBody2D" parent="World"]
+position = Vector2(1.9073486e-06, 2.3841858e-07)
+collision_layer = 2
+collision_mask = 3
+
+[node name="GroundCollision" type="CollisionShape2D" parent="World/Ground"]
+shape = SubResource("SegmentShape2D_iixi8")
+
 [node name="Player" parent="World" instance=ExtResource("1_tlcug")]
-position = Vector2(302, 283)
+position = Vector2(393, 231)
+collision_mask = 3
 
 [node name="UI" type="CanvasLayer" parent="."]
 
