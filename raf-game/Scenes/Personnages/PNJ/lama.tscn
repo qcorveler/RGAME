@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://cvjixclkbpycv"]
+
+[ext_resource type="Script" uid="uid://xuaiop3wtj8a" path="res://Scripts/PNJ/lama.gd" id="1_farpu"]
+[ext_resource type="Texture2D" uid="uid://cemokost4anvc" path="res://Img/PNJ/llama.png" id="1_rf3ht"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_farpu"]
+atlas = ExtResource("1_rf3ht")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_trrbu"]
+atlas = ExtResource("1_rf3ht")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ej472"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_farpu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_trrbu")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 4.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dce22"]
+size = Vector2(24, 33)
+
+[node name="Lama" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_farpu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ej472")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.5109438
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-8, 4.5)
+shape = SubResource("RectangleShape2D_dce22")
