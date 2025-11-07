@@ -93,7 +93,7 @@ player_path = NodePath("../PlayerRafVieux")
 
 [node name="PlayerRafVieux" parent="World" instance=ExtResource("8_jroud")]
 collision_mask = 3
-speed = 2255
+speed = 200
 jump_velocity = 0
 metadata/_edit_group_ = true
 
