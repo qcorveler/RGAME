@@ -142,7 +142,6 @@ func pixelate_in():
 func _on_screen_pwd_correct() -> void:
 	await get_tree().create_timer(1.0).timeout
 	await pixelate_in()
-	await get_tree().create_timer(0.5).timeout
 	screen.toggle_visible()
 	SceneTransition.go_to_scene("Levels/level_1")
 	
