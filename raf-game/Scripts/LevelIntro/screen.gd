@@ -3,6 +3,8 @@ extends Control
 var vis = false
 var can_write = false
 
+signal pwd_correct
+
 func toggle_visible() :
 	can_write = false
 	_cursor_visible = true
@@ -94,18 +96,19 @@ func _on_submit():
 		_on_password_fail()
 
 func _on_password_success():
-	# Effet visuel ou suite du jeu
-	# Réinitialise le champ si besoin
+	# Passer au niveau suivant
 	_password = ""
 	password_label.text = _display_text()
 	result_label.label_settings.font_color = Color("009000ff")
 	result_label.text = "Mot de passe correct"
-	# ... autre logique
+	# TODO Ajouter un son !
+	pwd_correct.emit()
+	
 
 func _on_password_fail():
-	# par ex. clear, vibrate, jouer son d'erreur
 	_password = ""
 	password_label.text = _display_text()
 	result_label.label_settings.font_color = Color("900000ff")
 	result_label.text = "Mot de passe incorrect"
+	# TODO Ajouter un son !
 	# tu peux aussi jouer une animation d'erreur

@@ -1,7 +1,8 @@
-[gd_scene load_steps=17 format=3 uid="uid://j3vno6m6c6ng"]
+[gd_scene load_steps=19 format=3 uid="uid://j3vno6m6c6ng"]
 
 [ext_resource type="Script" uid="uid://bl0x6ooit8gpl" path="res://Scripts/LevelIntro/level_intro.gd" id="1_ted0y"]
 [ext_resource type="PackedScene" uid="uid://b2m46f548yywj" path="res://Scenes/UI/pause_menu.tscn" id="2_jroud"]
+[ext_resource type="Shader" uid="uid://txrnk8fpn0jc" path="res://Shaders/Pixelise.gdshader" id="2_ke6a2"]
 [ext_resource type="Texture2D" uid="uid://flp0e0f07g3g" path="res://Img/Background/LevelIntro/Ehpad couloir-1.png" id="2_vswdf"]
 [ext_resource type="Texture2D" uid="uid://cycdqcq522h1e" path="res://Img/Background/LevelIntro/Ehpad couloir-2.png" id="3_4yojd"]
 [ext_resource type="Texture2D" uid="uid://clgc6rw11ve8q" path="res://Img/Background/LevelIntro/Ehpad couloir-3.png" id="4_ibo0l"]
@@ -38,6 +39,11 @@ animations = [{
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_s7lup"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_ibo0l"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2xmef"]
+shader = ExtResource("2_ke6a2")
+shader_parameter/pixel_size_pixels = 1.0
+shader_parameter/strength = 1.0
 
 [node name="LevelIntro" type="Node2D"]
 script = ExtResource("1_ted0y")
@@ -87,7 +93,7 @@ player_path = NodePath("../PlayerRafVieux")
 
 [node name="PlayerRafVieux" parent="World" instance=ExtResource("8_jroud")]
 collision_mask = 3
-speed = 200
+speed = 2255
 jump_velocity = 0
 metadata/_edit_group_ = true
 
@@ -99,5 +105,15 @@ metadata/_edit_group_ = true
 
 [node name="Screen" parent="UI" instance=ExtResource("12_5bvio")]
 
+[node name="Pixelate" type="ColorRect" parent="UI"]
+material = SubResource("ShaderMaterial_2xmef")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="PauseMenu" parent="UI" instance=ExtResource("2_jroud")]
 visible = false
+
+[connection signal="pwd_correct" from="UI/Screen" to="." method="_on_screen_pwd_correct"]

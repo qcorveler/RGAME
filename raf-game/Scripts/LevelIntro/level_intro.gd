@@ -26,6 +26,8 @@ extends Node2D
 var dialogue_index := 0
 @onready var scene_dialogues = DialogueLoader.dialogues["level_intro"]
 
+@onready var pixelate = ui.get_node("Pixelate")
+
 var screen_reached : bool = false
 
 # Variable permettant de savoir si le joueur se trouve devant un objet interactif
@@ -83,6 +85,9 @@ func _ready():
 	
 	# Gestion de l'écran d'ordinateur
 	screen.set_visible(false)
+	
+	# Gestion de la pixélisation
+	pixelate.visible = false
 
 func _process(_delta):
 	# Tableau Saint Malo
@@ -122,3 +127,22 @@ func _input(event: InputEvent) -> void:
 		if storage :
 			dialoguePanel.set_lines(scene_dialogues["storage"]["lines"])
 			dialoguePanel.set_active(true)
+
+func pixelate_in():
+	pixelate.visible = true
+	var mat = pixelate.material
+	# initialisation propre
+	mat.set_shader_parameter("pixel_size_pixels", 1.0)
+	mat.set_shader_parameter("strength", 1.0)
+	
+	var tween = create_tween()
+	tween.tween_property(mat, "shader_parameter/pixel_size_pixels", 64.0, 1.5)
+	await tween.finished
+
+func _on_screen_pwd_correct() -> void:
+	await get_tree().create_timer(1.0).timeout
+	await pixelate_in()
+	await get_tree().create_timer(0.5).timeout
+	screen.toggle_visible()
+	SceneTransition.go_to_scene("Levels/level_1")
+	

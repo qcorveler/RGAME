@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bmm0ung1idq1m"]
+[gd_scene load_steps=12 format=3 uid="uid://bmm0ung1idq1m"]
 
 [ext_resource type="Script" uid="uid://bmp4vyb7ac0vk" path="res://Scripts/Level1/level_1.gd" id="1_4dpyx"]
 [ext_resource type="PackedScene" uid="uid://balwv05viq0lw" path="res://Scenes/Personnages/Player/Player.tscn" id="1_tlcug"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b2m46f548yywj" path="res://Scenes/UI/pause_menu.tscn" id="3_3mqfk"]
 [ext_resource type="PackedScene" uid="uid://cvjixclkbpycv" path="res://Scenes/Personnages/PNJ/lama.tscn" id="4_cyadu"]
 [ext_resource type="Texture2D" uid="uid://bvh233qk6lq47" path="res://Lights/Lumière_Joueur.png" id="4_xgxfi"]
+[ext_resource type="Script" uid="uid://lr3ex5tifp70" path="res://Scripts/Lights/light_script.gd" id="5_5f3p6"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cyadu"]
 animations = [{
@@ -75,9 +76,13 @@ position = Vector2(105.00001, 301)
 scale = Vector2(3, 3)
 
 [node name="PointLight2D" type="PointLight2D" parent="World/Lama"]
+color = Color(1, 1, 0.46666667, 1)
 range_item_cull_mask = 7
 texture = ExtResource("4_xgxfi")
+offset = Vector2(-7, 0)
 texture_scale = 0.42
+script = ExtResource("5_5f3p6")
+base_texture_scale = 0.42
 
 [node name="Player" parent="World" instance=ExtResource("1_tlcug")]
 position = Vector2(393, 231)
@@ -86,6 +91,8 @@ collision_mask = 3
 [node name="PointLight2D" type="PointLight2D" parent="World/Player"]
 range_item_cull_mask = 3
 texture = ExtResource("4_xgxfi")
+texture_scale = 1.87
+script = ExtResource("5_5f3p6")
 
 [node name="UI" type="CanvasLayer" parent="."]
 
