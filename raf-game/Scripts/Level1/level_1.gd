@@ -6,6 +6,8 @@ extends Node2D
 @onready var background : AnimatedSprite2D = world.get_node("Background/AnimatedBackground")
 @onready var ground = $World/Ground/GroundCollision
 
+@onready var lama = $World/Lama
+
 func _ready() :
 	# Gestion du background
 	var maxX = background.sprite_frames.get_frame_texture("default", 0).get_size().x*background.scale.x
@@ -13,6 +15,11 @@ func _ready() :
 	
 	# Gestion du joueur
 	player.change_skin("skin_baby_raf")
+	player.position.x = 100
+	player.position.y = 350
+	
+	# Gestion du Lama
+	lama.position.x = 2500
 	
 	# Gestion de la caméra
 	cam.limit_bottom = maxY

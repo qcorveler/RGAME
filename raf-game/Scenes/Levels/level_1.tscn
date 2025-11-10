@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bmm0ung1idq1m"]
+[gd_scene load_steps=13 format=3 uid="uid://bmm0ung1idq1m"]
 
 [ext_resource type="Script" uid="uid://bmp4vyb7ac0vk" path="res://Scripts/Level1/level_1.gd" id="1_4dpyx"]
 [ext_resource type="PackedScene" uid="uid://balwv05viq0lw" path="res://Scenes/Personnages/Player/Player.tscn" id="1_tlcug"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cvjixclkbpycv" path="res://Scenes/Personnages/PNJ/lama.tscn" id="4_cyadu"]
 [ext_resource type="Texture2D" uid="uid://bvh233qk6lq47" path="res://Lights/Lumière_Joueur.png" id="4_xgxfi"]
 [ext_resource type="Script" uid="uid://lr3ex5tifp70" path="res://Scripts/Lights/light_script.gd" id="5_5f3p6"]
+[ext_resource type="PackedScene" uid="uid://c74gt60xgsb7d" path="res://Scenes/UI/dialogue_panel.tscn" id="7_jv26f"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cyadu"]
 animations = [{
@@ -35,7 +36,6 @@ b = Vector2(3734, 517)
 script = ExtResource("1_4dpyx")
 
 [node name="World" type="CanvasModulate" parent="."]
-color = Color(0, 0, 0, 1)
 
 [node name="Background" type="Node2D" parent="World"]
 
@@ -72,14 +72,16 @@ collision_mask = 3
 shape = SubResource("SegmentShape2D_iixi8")
 
 [node name="Lama" parent="World" instance=ExtResource("4_cyadu")]
-position = Vector2(105.00001, 301)
+position = Vector2(2008, 353)
 scale = Vector2(3, 3)
+player_path = NodePath("../Player")
+speed = 0.3
+metadata/_edit_group_ = true
 
 [node name="PointLight2D" type="PointLight2D" parent="World/Lama"]
 color = Color(1, 1, 0.46666667, 1)
 range_item_cull_mask = 7
 texture = ExtResource("4_xgxfi")
-offset = Vector2(-7, 0)
 texture_scale = 0.42
 script = ExtResource("5_5f3p6")
 base_texture_scale = 0.42
@@ -95,6 +97,10 @@ texture_scale = 1.87
 script = ExtResource("5_5f3p6")
 
 [node name="UI" type="CanvasLayer" parent="."]
+
+[node name="DialoguePanel" parent="UI" instance=ExtResource("7_jv26f")]
+offset_top = -491.0
+offset_bottom = -491.0
 
 [node name="PauseMenu" parent="UI" instance=ExtResource("3_3mqfk")]
 visible = false
