@@ -29,7 +29,7 @@
 			"lines": [
 				{
 					"speaker": "M. Corveler",
-					"text": "Allez, faut que je vous montre quelque chose, je viens de m'en souvenir !"
+					"text": "Allez, faut que je vous montre quelque chose, j'essaie de m'en souvenir !"
 				}
 			]
 		},
@@ -94,6 +94,25 @@
 				{
 				  "speaker": "M. Corveler",
 				  "text": "Ah voilà le mot de passe : TaiTa"
+				}
+			]
+		}
+	},
+
+	"level_1" : {
+		"debut" : {
+			"lines" : [
+				{
+					"speaker": "M. Lama",
+					"text": "Tiens, on dirait que j'ai enfin retrouvé l'esprit de notre petit Raphaël !"
+				},
+				{
+					"speaker": "M. Lama",
+					"text": "Il était temps, on commençait à le perdre complètement. Nous sommes ici dans ta mémoire, enfin ce qu'il en reste. La lumière s'éteint peu à peu depuis un moment..."
+				},
+				{
+					"speaker": "M. Lama",
+					"text": ""
 				}
 			]
 		}
