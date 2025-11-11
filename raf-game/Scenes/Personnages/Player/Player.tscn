@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://balwv05viq0lw"]
 
-[ext_resource type="Script" uid="uid://setf7bqajpkw" path="res://Scripts/player.gd" id="1_kpjcp"]
+[ext_resource type="Script" uid="uid://setf7bqajpkw" path="res://Scripts/Player/player.gd" id="1_kpjcp"]
 [ext_resource type="PackedScene" uid="uid://dubqxfeqkucgi" path="res://Scenes/Personnages/Player/Skins/skin_robe_de_chambre.tscn" id="2_j11si"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kpjcp"]

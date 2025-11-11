@@ -60,7 +60,6 @@ func _physics_process(delta) :
 				var charge_ratio = crouch_timer / max_crouch_time
 				jump_power += crouch_jump_boost * charge_ratio
 				crouch_timer = 0.0
-			print(jump_power)
 			velocity.y = jump_power
 		if Input.is_action_just_released("jump") and velocity.y < 0:
 			velocity.y *= 0.5  # stoppe la montée plus tôt = saut plus court
