@@ -107,12 +107,24 @@
 					"text": "Tiens, on dirait que j'ai enfin retrouvé l'esprit de notre petit Raphaël !"
 				},
 				{
+					"speaker": "Raphaël",
+					"text": "..."
+				},
+				{
 					"speaker": "M. Lama",
 					"text": "Il était temps, on commençait à le perdre complètement. Nous sommes ici dans ta mémoire, enfin ce qu'il en reste. La lumière s'éteint peu à peu depuis un moment..."
 				},
 				{
 					"speaker": "M. Lama",
-					"text": ""
+					"text": "J'ai l'impression que tu t'es un peu réveillé aujourd'hui, il y a un sursaut d'espoir. Peut-être que nous pouvons encore faire quelque chose."
+				},
+				{
+					"speaker": "Raphaël",
+					"text": "C'est ma mémoire ? Quelque chose pour quoi ?"
+				},
+				{
+					"speaker": "M. Lama",
+					"text": "Pour retrouver ta mémoire pardi ! Il faut mettre un peu de lumière là dedans ! Tu peux te déplacer ? Essaie de l'explorer autant que possible, tu trouveras sans doute des choses intéressantes"
 				}
 			]
 		}

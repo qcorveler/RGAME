@@ -21,6 +21,8 @@ extends Node2D
 
 @onready var dialoguePanel = ui.get_node("DialoguePanel")
 @onready var inputIndicator = ui.get_node("InputIndicator")
+var indicator_d_terminated := false
+var indicator_q_terminated := false
 @onready var screen = ui.get_node("Screen")
 
 var dialogue_index := 0
@@ -77,7 +79,7 @@ func _ready():
 	infirmier.position = Vector2(200, groundY - (infirmier.get_skin_size().y) * (ratio/2) - 20)
 	
 	# Gestion de l'indicateur d'input
-	inputIndicator.set_active(false)
+	inputIndicator.set_active(true)
 	inputIndicator.set_black(false)
 	
 	# Gestion du panel de dialogue
@@ -90,7 +92,7 @@ func _ready():
 	pixelate.visible = false
 
 func _process(_delta):
-	# Tableau Saint Malo
+	# Mise à jour de la position et de l'indicateur
 	saint_malo = 850 <= player.position.x and player.position.x <= 1200 and !screen_reached
 	enki_bilal = 3250 <= player.position.x and player.position.x <= 3600
 	vieille_nue = 4340 <= player.position.x and player.position.x <= 4750
@@ -101,10 +103,20 @@ func _process(_delta):
 	if saint_malo or enki_bilal or vieille_nue or minecraft or computer or storage :
 		inputIndicator.set_icon(load("res://Img/util/keyboard_a.png"))
 		inputIndicator.set_active(true)
-	else :
+	elif not indicator_d_terminated :
+		inputIndicator.set_icon(load("res://Img/util/keyboard_d.png")) # Indication du déplacement à droite
+		inputIndicator.set_active(true)
+	elif indicator_d_terminated and not indicator_q_terminated :
+		inputIndicator.set_icon(load("res://Img/util/keyboard_q.png")) # Indication du déplacement à gauche
+		inputIndicator.set_active(true)
+	else:
 		inputIndicator.set_active(false)
 
 func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("move_right") and not indicator_d_terminated :
+		indicator_d_terminated = true
+	if event.is_action_pressed("move_left") and not indicator_q_terminated :
+		indicator_q_terminated = true
 	if event.is_action_pressed("interact_a") and !GameState.wait_player_input:
 		if saint_malo :
 			dialoguePanel.set_lines(scene_dialogues["saint_malo"]["lines"])

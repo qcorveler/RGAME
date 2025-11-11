@@ -79,7 +79,7 @@ func _process(delta: float) :
 			bipSoundPlayer.play_sound()
 			timer = 0.0
 	else:
-		if not finished :
+		if not finished and lines :
 			if !GameState.wait_player_input:
 				inputIndicator.set_active(true)
 			finished = true

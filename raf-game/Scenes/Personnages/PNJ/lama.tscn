@@ -93,5 +93,5 @@ shape = SubResource("RectangleShape2D_dce22")
 
 [node name="JumpSoundPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_trrbu")
-max_distance = 2424.0
-attenuation = 2.0000021
+max_distance = 4096.0
+attenuation = 2.9281723

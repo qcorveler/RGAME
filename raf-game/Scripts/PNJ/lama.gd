@@ -1,9 +1,11 @@
 extends CharacterBody2D
 
+signal final_position_reached()
+
 @export var gravity: float = 1500.0
 @export var player_path: NodePath
 @export var speed: float = 0.4
-@export var follow_distance: float = 300.0  # distance à garder du joueur
+@export var follow_distance: float = 200.0  # distance à garder du joueur
 var acceleration : float = 0.2
 
 @onready var sprite : AnimatedSprite2D = $AnimatedSprite2D
@@ -11,7 +13,7 @@ var acceleration : float = 0.2
 @onready var jumpsoundPlayer = $JumpSoundPlayer
 var timer : float = 0
 
-var intro_ended : bool = false
+var on_final_position : bool = false
 
 func _physics_process(delta):
 	if !is_on_floor() :
@@ -22,9 +24,9 @@ func _physics_process(delta):
 	
 	sprite.flip_h = direction < 0
 	
-	if intro_ended:
+	if on_final_position:
 		return
-	
+	print(position.x)
 	timer += delta
 	# Si trop loin → avancer vers le joueur
 	if abs(direction) > follow_distance:
@@ -37,7 +39,8 @@ func _physics_process(delta):
 		velocity.x = lerp(velocity.x, 0.0, acceleration)
 		update_animation(0)
 		if velocity.x <= 0.1 :
-			intro_ended = true
+			on_final_position = true
+			final_position_reached.emit()
 	move_and_slide()
 
 func update_animation(direction):
