@@ -1,7 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://by4hv48lgyhg2"]
+[gd_scene load_steps=8 format=3 uid="uid://by4hv48lgyhg2"]
 
 [ext_resource type="Script" uid="uid://setf7bqajpkw" path="res://Scripts/Player/player.gd" id="1_uwy5g"]
 [ext_resource type="PackedScene" uid="uid://csgisq117w3c6" path="res://Scenes/Personnages/Player/Skins/skin_ehpad.tscn" id="2_uwy5g"]
+[ext_resource type="Script" uid="uid://cbbsir1jw5rx" path="res://Scripts/Player/states/idle.gd" id="3_hdk8d"]
+[ext_resource type="Script" uid="uid://c4kcjm36ky11w" path="res://Scripts/Player/states/run.gd" id="4_dp2h8"]
+[ext_resource type="Script" uid="uid://e3n50f4m2i8m" path="res://Scripts/Player/states/jump.gd" id="5_xh7gd"]
+[ext_resource type="Script" uid="uid://bicgtyxgjcpjb" path="res://Scripts/Player/states/crouch.gd" id="6_fdc6y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kpjcp"]
 size = Vector2(72, 110)
@@ -22,3 +26,17 @@ limit_top = 0
 limit_bottom = 0
 limit_smoothed = true
 position_smoothing_enabled = true
+
+[node name="States" type="Node" parent="."]
+
+[node name="Idle" type="Node" parent="States"]
+script = ExtResource("3_hdk8d")
+
+[node name="Run" type="Node" parent="States"]
+script = ExtResource("4_dp2h8")
+
+[node name="Jump" type="Node" parent="States"]
+script = ExtResource("5_xh7gd")
+
+[node name="Crouch" type="Node" parent="States"]
+script = ExtResource("6_fdc6y")

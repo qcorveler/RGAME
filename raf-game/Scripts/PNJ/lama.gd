@@ -26,7 +26,6 @@ func _physics_process(delta):
 	
 	if on_final_position:
 		return
-	print(position.x)
 	timer += delta
 	# Si trop loin → avancer vers le joueur
 	if abs(direction) > follow_distance:
