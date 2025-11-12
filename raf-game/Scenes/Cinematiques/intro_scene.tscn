@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://gsda4ybkcp72"]
 
-[ext_resource type="Script" uid="uid://bibv5acftictp" path="res://Scripts/intro_scene.gd" id="1_mgu71"]
+[ext_resource type="Script" uid="uid://bibv5acftictp" path="res://Scripts/LevelIntro/intro_scene.gd" id="1_mgu71"]
 [ext_resource type="FontFile" uid="uid://gkas3n827804" path="res://fonts/PressStart2P-Regular.ttf" id="2_3nlno"]
-[ext_resource type="Script" uid="uid://bgv10j1nwtfs1" path="res://Scripts/intro_scene_text.gd" id="3_net45"]
+[ext_resource type="Script" uid="uid://bgv10j1nwtfs1" path="res://Scripts/LevelIntro/intro_scene_text.gd" id="3_net45"]
 [ext_resource type="AudioStream" uid="uid://diwuid8emjli4" path="res://Sounds/LetterBip.wav" id="4_qa2tj"]
 [ext_resource type="Script" uid="uid://deyummoc7de3d" path="res://Scripts/bip_sound_player.gd" id="5_0dxeh"]
 [ext_resource type="PackedScene" uid="uid://bcivjodw5wd0w" path="res://Scenes/UI/input_indicator.tscn" id="6_cu8k6"]

@@ -15,7 +15,8 @@ func _ready() :
 	# Gestion du background
 	var maxX = background.sprite_frames.get_frame_texture("default", 0).get_size().x*background.scale.x
 	var maxY = ground.shape.a.y + 270
-	print(maxX)
+	world.color = Color(0.0, 0.0, 0.0)
+	
 	# Gestion du joueur
 	player.change_skin("skin_baby_raf")
 	player.position.x = 100

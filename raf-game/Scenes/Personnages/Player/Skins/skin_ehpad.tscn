@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://csgisq117w3c6"]
 
-[ext_resource type="Script" uid="uid://ca7vk1r2fiib5" path="res://Scripts/skin.gd" id="1_clydb"]
+[ext_resource type="Script" uid="uid://ca7vk1r2fiib5" path="res://Scripts/Player/skin.gd" id="1_clydb"]
 [ext_resource type="Texture2D" uid="uid://cvghahtdwqlq4" path="res://Img/Skins/Raf ieuv.png" id="2_ns0fc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p1qrq"]

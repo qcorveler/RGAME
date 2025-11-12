@@ -1,10 +1,13 @@
 extends State
 
 func enter(_previous_state):
-	player.velocity.x = 0
-	player.play_animation("idle") # crouch
+	player.collisionBox.position.y = 14.0
+	player.collisionBox.shape.size.y = 80.0
+	player.velocity.x = lerp(player.velocity.x, 0.0, player.acceleration)
+	player.play_animation("crouch")
 
 func physics_update(delta):
+	player.velocity.x = lerp(player.velocity.x, 0.0, player.acceleration)
 	player.is_crouching = true
 	player.crouch_timer += delta
 	player.crouch_timer = clamp(player.crouch_timer, 0.0, player.max_crouch_time)
@@ -16,3 +19,5 @@ func physics_update(delta):
 
 func exit():
 	player.is_crouching = false
+	player.collisionBox.position.y = 4.0
+	player.collisionBox.shape.size.y = 100.0

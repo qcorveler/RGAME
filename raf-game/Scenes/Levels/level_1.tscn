@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bmm0ung1idq1m"]
+[gd_scene load_steps=15 format=3 uid="uid://bmm0ung1idq1m"]
 
 [ext_resource type="Script" uid="uid://bmp4vyb7ac0vk" path="res://Scripts/Level1/level_1.gd" id="1_4dpyx"]
 [ext_resource type="PackedScene" uid="uid://balwv05viq0lw" path="res://Scenes/Personnages/Player/Player.tscn" id="1_tlcug"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bvh233qk6lq47" path="res://Lights/Lumière_Joueur.png" id="4_xgxfi"]
 [ext_resource type="Script" uid="uid://lr3ex5tifp70" path="res://Scripts/Lights/light_script.gd" id="5_5f3p6"]
 [ext_resource type="PackedScene" uid="uid://c74gt60xgsb7d" path="res://Scenes/UI/dialogue_panel.tscn" id="7_jv26f"]
+[ext_resource type="Texture2D" uid="uid://dfht30ka51r7h" path="res://Img/Background/LevelIntro/SolBasique.png" id="7_rb0md"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cyadu"]
 animations = [{
@@ -32,11 +33,13 @@ b = Vector2(0, 0)
 a = Vector2(-1.0000019, 382)
 b = Vector2(7570, 382)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jv26f"]
+size = Vector2(242, 32)
+
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_4dpyx")
 
 [node name="World" type="CanvasModulate" parent="."]
-color = Color(0, 0, 0, 1)
 
 [node name="Background" type="Node2D" parent="World"]
 
@@ -73,7 +76,7 @@ collision_mask = 3
 shape = SubResource("SegmentShape2D_iixi8")
 
 [node name="Lama" parent="World" instance=ExtResource("4_cyadu")]
-position = Vector2(2008, 353)
+position = Vector2(-19, -29)
 scale = Vector2(3, 3)
 player_path = NodePath("../Player")
 speed = 0.3
@@ -85,17 +88,30 @@ range_item_cull_mask = 7
 texture = ExtResource("4_xgxfi")
 texture_scale = 0.42
 script = ExtResource("5_5f3p6")
-base_texture_scale = 0.42
+final_texture_scale = 0.42
 
 [node name="Player" parent="World" instance=ExtResource("1_tlcug")]
-position = Vector2(393.95, 0)
+position = Vector2(-9, -5)
 collision_mask = 3
+metadata/_edit_group_ = true
 
 [node name="PointLight2D" type="PointLight2D" parent="World/Player"]
 range_item_cull_mask = 3
 texture = ExtResource("4_xgxfi")
 texture_scale = 1.87
 script = ExtResource("5_5f3p6")
+
+[node name="Plateform1" type="StaticBody2D" parent="World"]
+position = Vector2(965, 279)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Plateform1"]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_jv26f")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Plateform1"]
+scale = Vector2(0.2363281, 1)
+texture = ExtResource("7_rb0md")
 
 [node name="UI" type="CanvasLayer" parent="."]
 

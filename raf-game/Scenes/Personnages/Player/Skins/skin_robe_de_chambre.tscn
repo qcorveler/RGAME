@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://dubqxfeqkucgi"]
 
 [ext_resource type="Texture2D" uid="uid://b8x2elcr4c53o" path="res://Img/Skins/Raf skin1.png" id="1_fyqdp"]
-[ext_resource type="Script" uid="uid://ca7vk1r2fiib5" path="res://Scripts/skin.gd" id="1_siin0"]
+[ext_resource type="Script" uid="uid://ca7vk1r2fiib5" path="res://Scripts/Player/skin.gd" id="1_siin0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kne1u"]
 atlas = ExtResource("1_fyqdp")
