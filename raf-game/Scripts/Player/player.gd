@@ -11,7 +11,8 @@ extends CharacterBody2D
 @export var acceleration = 0.1
 
 @onready var skin = $Skin
-@onready var collisionBox : CollisionShape2D = $CollisionShape2D
+@onready var collisionStanding : CollisionShape2D = $CollisionStanding
+@onready var collisionCrouching : CollisionShape2D = $CollisionCrouching
 
 var states = {}
 var current_state: State
@@ -21,6 +22,9 @@ var is_crouching := false
 var crouch_timer := 0.0
 
 func _ready() -> void:
+	# Gestion de la hitbox
+	set_hitbox_crouching(false)
+	
 	# Charger les états
 	states = {
 		"idle": $States/Idle,
@@ -67,8 +71,73 @@ func change_skin(skin_name: String):
 
 func set_skin_scale(skinScale):
 	skin.apply_scale(Vector2(skinScale, skinScale))
-	collisionBox.apply_scale(Vector2(skinScale, skinScale))
+	collisionStanding.apply_scale(Vector2(skinScale, skinScale))
+	collisionCrouching.apply_scale(Vector2(skinScale, skinScale))
 
 func get_skin_size():
 	return skin.get_skin_size()
+
+func set_hitbox_crouching(value : bool):
+	collisionCrouching.disabled = !value
+	collisionStanding.disabled = value
+
+func try_stand_up_smooth():
+	print("Essayer de se lever doucement")
+	if not is_crouching:
+		return  # déjà debout
+
+	var target_pos = find_free_stand_position()
+	if target_pos == global_position:
+		# Pas possible, on reste accroupi
+		print("Impossible de se relever ici.")
+		return
+
+	# On tweene la position jusqu'à la zone libre
+	var tween := create_tween()
+	tween.tween_property(self, "global_position", target_pos, 0.25).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
+
+	# On attend la fin du tween avant de se relever pour éviter un pop visuel
+	tween.finished.connect(_on_stand_up_tween_finished)
 	
+func _on_stand_up_tween_finished():
+	# Activer la hitbox debout
+	is_crouching = false
+	set_hitbox_crouching(false)
+
+	# Choisir l'état après relevage
+	if Input.is_action_pressed("jump"):
+		change_state("jump")
+	else:
+		change_state("idle")
+
+func find_free_stand_position() -> Vector2:
+	var shape = collisionStanding.shape
+	var max_slide := 50.0
+	var step := 2.0
+
+	# Test à la position actuelle
+	if not test_collision_at(global_position, shape):
+		return global_position
+
+	# Sinon, glisser à gauche/droite jusqu'à trouver un endroit libre
+	for offset in range(int(step), int(max_slide) + 1, int(step)):
+		var right := global_position + Vector2(offset, 0)
+		var left := global_position - Vector2(offset, 0)
+
+		if not test_collision_at(right, shape):
+			return right
+		if not test_collision_at(left, shape):
+			return left
+	return global_position
+	
+func test_collision_at(global_pos: Vector2, shape) -> bool:
+	var space := get_world_2d().direct_space_state
+	
+	var params := PhysicsShapeQueryParameters2D.new()
+	params.shape = shape
+	params.transform = Transform2D(0, global_pos)
+	params.margin = 0.01
+	params.exclude = [self]  # on ignore le joueur
+	
+	var result := space.intersect_shape(params, 32)
+	return result.size() > 0

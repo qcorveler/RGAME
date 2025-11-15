@@ -1,9 +1,8 @@
 extends State
 
 func enter(_previous_state):
+	player.set_hitbox_crouching(false)
 	player.crouch_timer = 0
-	player.collisionBox.position.y = 4.0
-	player.collisionBox.shape.size.y = 100.0
 	player.velocity.x = lerp(player.velocity.x, 0.0, player.acceleration)
 	player.play_animation("idle")
 

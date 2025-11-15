@@ -84,6 +84,7 @@ metadata/_edit_group_ = true
 
 [node name="PointLight2D" type="PointLight2D" parent="World/Lama"]
 color = Color(1, 1, 0.46666667, 1)
+blend_mode = 2
 range_item_cull_mask = 7
 texture = ExtResource("4_xgxfi")
 texture_scale = 0.42
@@ -96,6 +97,7 @@ collision_mask = 3
 metadata/_edit_group_ = true
 
 [node name="PointLight2D" type="PointLight2D" parent="World/Player"]
+blend_mode = 2
 range_item_cull_mask = 3
 texture = ExtResource("4_xgxfi")
 texture_scale = 1.87

@@ -1,8 +1,7 @@
 extends State
 
 func enter(_previous_state):
-	player.collisionBox.position.y = 14.0
-	player.collisionBox.shape.size.y = 80.0
+	player.set_hitbox_crouching(true)
 	player.velocity.x = lerp(player.velocity.x, 0.0, player.acceleration)
 	player.play_animation("crouch")
 
@@ -18,6 +17,6 @@ func physics_update(delta):
 		player.change_state("jump")
 
 func exit():
+	player.try_stand_up_smooth()
 	player.is_crouching = false
-	player.collisionBox.position.y = 4.0
-	player.collisionBox.shape.size.y = 100.0
+	player.set_hitbox_crouching(false)
