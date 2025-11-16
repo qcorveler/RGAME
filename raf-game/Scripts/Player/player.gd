@@ -82,14 +82,11 @@ func set_hitbox_crouching(value : bool):
 	collisionStanding.disabled = value
 
 func try_stand_up_smooth():
-	print("Essayer de se lever doucement")
 	if not is_crouching:
 		return  # déjà debout
 
 	var target_pos = find_free_stand_position()
 	if target_pos == global_position:
-		# Pas possible, on reste accroupi
-		print("Impossible de se relever ici.")
 		return
 
 	# On tweene la position jusqu'à la zone libre

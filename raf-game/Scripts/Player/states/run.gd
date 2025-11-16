@@ -23,7 +23,7 @@ func physics_update(delta):
 
 	if direction == 0:
 		player.change_state("idle")
-	elif Input.is_action_pressed("jump"):
+	elif Input.is_action_pressed("jump") and player.is_on_floor():
 		player.change_state("jump")
 	elif Input.is_action_pressed("crouch"):
 		player.change_state("crouch")

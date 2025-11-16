@@ -11,6 +11,11 @@ extends Node2D
 @onready var dialoguePanel = $UI/DialoguePanel
 @onready var scene_dialogues = DialogueLoader.dialogues["level_1"]
 
+@onready var tilemap = $World/TileMap
+@onready var wallLayer : TileMapLayer = $World/TileMap/WallAndPlateformLayer
+@onready var groundLayer : TileMapLayer = $World/TileMap/GroundLayer
+@onready var trapLayer : TileMapLayer = $World/TileMap/TrapLayer
+
 func _ready() :
 	# Gestion du background
 	var maxX = background.sprite_frames.get_frame_texture("default", 0).get_size().x*background.scale.x
@@ -32,9 +37,19 @@ func _ready() :
 	
 	# Gestion des premiers dialogues 
 	GameState.dialogue_active = true
+	
+	# Gestion des plateformes 
+	set_platforms_visible(false) # Pour pas qu'on les voit quand le lama se déplace
 
 
 func _on_lama_final_position_reached() -> void:
 	# Lancer les premiers dialogues
 	dialoguePanel.set_lines(scene_dialogues["debut"]["lines"])
 	dialoguePanel.set_active(true)
+	set_platforms_visible(true)
+
+func set_platforms_visible(value : bool) -> void:
+	wallLayer.enabled = value
+	groundLayer.collision_enabled = value
+	trapLayer.enabled = value
+	

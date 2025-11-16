@@ -68,6 +68,8 @@ crouch={
 2d_physics/layer_1="Player"
 2d_physics/layer_2="Ground"
 2d_physics/layer_3="PNJ"
+2d_physics/layer_4="Traps"
+2d_physics/layer_5="Indication"
 
 [rendering]
 
