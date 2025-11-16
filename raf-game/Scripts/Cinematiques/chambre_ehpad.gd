@@ -13,8 +13,7 @@ var scene_dialogues = DialogueLoader.dialogues["chambre_ehpad"]["lines"]
 @onready var dialoguePanel = $DialoguePanel
 
 func _ready() -> void:
-	dialoguePanel.set_active(true)
-	dialoguePanel.set_lines(scene_dialogues)
+	dialoguePanel.set_lines_and_activate(scene_dialogues)
 
 func _physics_process(delta: float) -> void:
 	timer += delta

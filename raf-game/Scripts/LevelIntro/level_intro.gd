@@ -101,13 +101,13 @@ func _process(_delta):
 	computer = player.position.x >= 7300
 	
 	if saint_malo or enki_bilal or vieille_nue or minecraft or computer or storage :
-		inputIndicator.set_icon(load("res://Img/util/keyboard_a.png"))
+		inputIndicator.set_icon("a")
 		inputIndicator.set_active(true)
 	elif not indicator_d_terminated :
-		inputIndicator.set_icon(load("res://Img/util/keyboard_d.png")) # Indication du déplacement à droite
+		inputIndicator.set_icon("d") # Indication du déplacement à droite
 		inputIndicator.set_active(true)
 	elif indicator_d_terminated and not indicator_q_terminated :
-		inputIndicator.set_icon(load("res://Img/util/keyboard_q.png")) # Indication du déplacement à gauche
+		inputIndicator.set_icon("q") # Indication du déplacement à gauche
 		inputIndicator.set_active(true)
 	else:
 		inputIndicator.set_active(false)
@@ -119,26 +119,20 @@ func _input(event: InputEvent) -> void:
 		indicator_q_terminated = true
 	if event.is_action_pressed("interact_a") and !GameState.wait_player_input:
 		if saint_malo :
-			dialoguePanel.set_lines(scene_dialogues["saint_malo"]["lines"])
-			dialoguePanel.set_active(true)
+			dialoguePanel.set_lines_and_activate(scene_dialogues["saint_malo"]["lines"])
 		if enki_bilal :
-			dialoguePanel.set_lines(scene_dialogues["enki_bilal"]["lines"])
-			dialoguePanel.set_active(true)
+			dialoguePanel.set_lines_and_activate(scene_dialogues["enki_bilal"]["lines"])
 		if vieille_nue :
-			dialoguePanel.set_lines(scene_dialogues["vieille_nue"]["lines"])
-			dialoguePanel.set_active(true)
+			dialoguePanel.set_lines_and_activate(scene_dialogues["vieille_nue"]["lines"])
 		if minecraft :
-			dialoguePanel.set_lines(scene_dialogues["minecraft"]["lines"])
-			dialoguePanel.set_active(true)
+			dialoguePanel.set_lines_and_activate(scene_dialogues["minecraft"]["lines"])
 		if computer :
-			dialoguePanel.set_lines(scene_dialogues["computer"]["lines"])
-			dialoguePanel.set_active(true)
+			dialoguePanel.set_lines_and_activate(scene_dialogues["computer"]["lines"])
 			if !GameState.wait_player_input :
 				screen_reached = true
 				screen.toggle_visible()
 		if storage :
-			dialoguePanel.set_lines(scene_dialogues["storage"]["lines"])
-			dialoguePanel.set_active(true)
+			dialoguePanel.set_lines_and_activate(scene_dialogues["storage"]["lines"])
 
 func pixelate_in():
 	pixelate.visible = true

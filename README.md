@@ -2,6 +2,11 @@
 (le nom est encore à définir)
 
 
+## TODO
+
+- Faire un effet visuel quand on charge le saut
+- Gérer les morts
+
 ## Scénario global
 
 Raphaël est en EHPAD et a perdu la mémoire.

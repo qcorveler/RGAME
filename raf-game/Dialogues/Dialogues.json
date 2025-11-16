@@ -127,7 +127,39 @@
 					"text": "Pour retrouver ta mémoire pardi ! Il faut mettre un peu de lumière là dedans ! Tu peux te déplacer ? Essaie de l'explorer autant que possible, tu trouveras sans doute des choses intéressantes"
 				}
 			]
+		},
+		"lama_help" : {
+			"lines" : [
+				{
+					"speaker": "M. Lama",
+					"text": "Tu peux bouger ? Appuie sur 'Q' ou 'D' pour te déplacer ! Tu peux sauter avec la barre d'espace. Essaie d'explorer ta mémoire, tu trouveras sans doute des choses intéressantes."
+				}
+			]
+		},
+		"RunSign" : {
+			"lines" : [
+				{
+					"speaker" : "Note à moi même :",
+					"text": "Maintenir la touche 'Ctrl' quand j'avance me fait aller plus vite. C'est pratique pour atteindre des endroits inatteignables autrement !"
+				}
+			]
+		},
+		"JumpSign" : {
+			"lines" : [
+				{
+					"speaker" : "Note à moi même :",
+					"text": "Avec la touche 'Shift' je peux m'accroupir. Ça me permet d'avoir une meilleure détente quand je saute ensuite, super pratique !"
+				}
+			]
+		},
+		"ComboSign" : {
+			"lines" : [
+				{
+					"speaker" : "Note à moi même :",
+					"text": "En fait, je peux combiner m'accroupir et courir en appuyant sur les 2 touches en même temps pour avoir une super détente dans la direction que je veux !"
+				}
+			]
 		}
 	}
-  }
+}
   

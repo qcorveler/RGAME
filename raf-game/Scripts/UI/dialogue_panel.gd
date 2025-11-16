@@ -23,7 +23,8 @@ func set_speaker_name(speaker_name: String):
 func set_dialogue_text(dialogue_text: String):
 	dialogueLabel.text = dialogue_text
 
-func set_lines(_lines):
+func set_lines_and_activate(_lines):
+	set_active(true)
 	lines = _lines
 	set_speaker_name(lines[line_index]["speaker"])
 	set_dialogue_text(lines[line_index]["text"])
@@ -34,6 +35,7 @@ func set_active(value):
 	GameState.dialogue_active = value
 	visible = value
 	line_index = 0
+	inputIndicator.set_icon("space")
 	inputIndicator.set_active(false)
 	inputIndicator.set_black(value)
 	finished = false
@@ -52,7 +54,7 @@ func next_dialogue_line():
 
 func _ready() -> void:
 	dialogueLabel.visible_ratio = 0 # Rien n'est visible au début
-	inputIndicator.set_icon(load("res://Img/util/keyboard_space.png"))
+	inputIndicator.set_icon("space")
 	inputIndicator.set_active(false)
 	inputIndicator.set_black(true) # Mets l'icon de l'indicateur en noir
 

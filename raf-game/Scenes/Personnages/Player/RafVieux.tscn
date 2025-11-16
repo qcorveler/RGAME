@@ -16,7 +16,11 @@ speed = 500
 
 [node name="Skin" parent="." instance=ExtResource("2_uwy5g")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionCrouching" type="CollisionShape2D" parent="."]
+position = Vector2(6, 5)
+shape = SubResource("RectangleShape2D_kpjcp")
+
+[node name="CollisionStanding" type="CollisionShape2D" parent="."]
 position = Vector2(6, 5)
 shape = SubResource("RectangleShape2D_kpjcp")
 

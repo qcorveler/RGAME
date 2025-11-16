@@ -39,6 +39,8 @@ func _ready() -> void:
 	change_state("idle")
 
 func change_state(new_state_name: String):
+	if GameState.dialogue_active : # On ne peut pas changer d'état quand le dialogue est actif
+		return
 	if current_state:
 		current_state.exit()
 	current_state = states[new_state_name]
@@ -49,7 +51,7 @@ func _physics_process(delta) :
 	# Gravité
 	velocity.y += gravity * delta
 	velocity.y = min(velocity.y, 1600)
-	if current_state and !GameState.dialogue_active :
+	if current_state :
 		current_state.physics_update(delta)
 	move_and_slide()
 
@@ -109,7 +111,7 @@ func _on_stand_up_tween_finished():
 
 func find_free_stand_position() -> Vector2:
 	var shape = collisionStanding.shape
-	var max_slide := 50.0
+	var max_slide := 100.0
 	var step := 2.0
 
 	# Test à la position actuelle
@@ -135,6 +137,7 @@ func test_collision_at(global_pos: Vector2, shape) -> bool:
 	params.transform = Transform2D(0, global_pos)
 	params.margin = 0.01
 	params.exclude = [self]  # on ignore le joueur
+	params.collision_mask = 0xFFFFFFFF & ~(1 << 4) # ⚠ Ignore la couche 5 (qui correspond aux panneaux d'information)
 	
 	var result := space.intersect_shape(params, 32)
 	return result.size() > 0

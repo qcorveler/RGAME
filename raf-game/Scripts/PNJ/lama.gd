@@ -15,6 +15,9 @@ var timer : float = 0
 
 var on_final_position : bool = false
 
+var player_in_zone : bool = false
+var zone_size : float = 100.0
+
 func _physics_process(delta):
 	if !is_on_floor() :
 		velocity.y = clamp(velocity.y + gravity*delta, -500, 500)

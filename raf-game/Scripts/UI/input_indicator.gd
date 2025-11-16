@@ -6,6 +6,13 @@ extends Control
 @export var scale_min: float = 1.2
 @export var scale_max: float = 1.3
 
+var icons = { 
+	"space" : load("res://Img/util/keyboard_space.png"),
+	"a" : load("res://Img/util/keyboard_a.png"),
+	"q" : load("res://Img/util/keyboard_q.png"),
+	"d" : load("res://Img/util/keyboard_d.png")
+	}
+
 var t := 0.0
 @onready var icon : TextureRect = $InputIcon
 
@@ -13,7 +20,7 @@ var active := false
 var black := false
 
 func set_icon(_icon):
-	icon.texture = _icon
+	icon.texture = icons[_icon]
 
 func set_black(value: bool):
 	black = value
