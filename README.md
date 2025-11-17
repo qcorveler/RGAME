@@ -5,6 +5,7 @@
 ## TODO
 
 - Faire un effet visuel quand on charge le saut
+- Faire un effet de particule au niveau du sol quand on saute
 - Gérer les morts
 
 ## Scénario global
