@@ -2,10 +2,11 @@ extends State
 
 func enter(_previous_state):
 	var jump_power = player.jump_velocity
-	if player.crouch_timer > 0.2:
+	if player.crouch_timer > 0.3:
 		var charge_ratio = player.crouch_timer / player.max_crouch_time
 		jump_power += player.crouch_jump_boost * charge_ratio
 		player.crouch_timer = 0.0
+		player.spawn_jump_dust()
 	player.velocity.y = jump_power
 	player.play_animation("jump")
 

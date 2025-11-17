@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cfcynx5y361u3"
-path="res://.godot/imported/BabyRaf.png-6fb2e37524b0c169f3eb01d0d2932b7e.ctex"
+uid="uid://cvguhmh88crex"
+path="res://.godot/imported/BabyRaf_crouchCharging.png-da700ba17759183db275cd7c873cfa1a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Img/Skins/BabyRaf.png"
-dest_files=["res://.godot/imported/BabyRaf.png-6fb2e37524b0c169f3eb01d0d2932b7e.ctex"]
+source_file="res://Img/Skins/BabyRaf_crouchCharging.png"
+dest_files=["res://.godot/imported/BabyRaf_crouchCharging.png-da700ba17759183db275cd7c873cfa1a.ctex"]
 
 [params]
 

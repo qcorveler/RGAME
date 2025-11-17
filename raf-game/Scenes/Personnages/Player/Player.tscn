@@ -29,6 +29,9 @@ shape = SubResource("RectangleShape2D_2dvuo")
 [node name="Camera2D" type="Camera2D" parent="."]
 position_smoothing_enabled = true
 
+[node name="JumpDustMarker" type="Marker2D" parent="."]
+position = Vector2(0, 5)
+
 [node name="States" type="Node" parent="."]
 
 [node name="Idle" type="Node" parent="States"]

@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 SceneTransition="*res://autoloads/scene_transition.tscn"
 DialogueLoader="*res://autoloads/dialogue_loader.tscn"
 GameState="*res://autoloads/game_state.tscn"
+ParticlesLoader="*res://autoloads/particles_loader.tscn"
 
 [display]
 

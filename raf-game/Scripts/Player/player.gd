@@ -6,7 +6,7 @@ extends CharacterBody2D
 
 @export var run_multiplier := 2.0
 @export var crouch_jump_boost := -500
-@export var max_crouch_time := 3.0
+@export var max_crouch_time := 2.1
 
 @export var acceleration = 0.1
 
@@ -141,3 +141,33 @@ func test_collision_at(global_pos: Vector2, shape) -> bool:
 	
 	var result := space.intersect_shape(params, 32)
 	return result.size() > 0
+	
+func spawn_jump_dust():
+	var dust = ParticlesLoader.load_particle("jump_dust")
+	dust.global_position = $JumpDustMarker.global_position
+	get_tree().current_scene.add_child(dust)
+	dust.play_dust()
+	
+func shake(intensity: float = 1.0, duration: float = 0.2):
+	var tween = create_tween()
+	var original_pos = global_position
+
+	# On crée quelques mouvements aléatoires rapides
+	tween.tween_property(self, "global_position",
+		original_pos + Vector2(randf_range(-intensity, intensity), 0), duration / 4)
+	tween.tween_property(self, "global_position",
+		original_pos + Vector2(randf_range(-intensity, intensity), 0), duration / 4)
+	tween.tween_property(self, "global_position", original_pos, duration / 2)
+
+func shake_camera(intensity: float = 2.0, duration: float = 0.2):
+	var cam = $Camera2D
+	var tween = create_tween()
+	var original_pos = cam.position
+
+	tween.tween_property(cam, "position",
+		original_pos + Vector2(randf_range(-intensity, intensity), randf_range(-intensity, intensity)),
+		duration / 4)
+	tween.tween_property(cam, "position",
+		original_pos + Vector2(randf_range(-intensity, intensity), randf_range(-intensity, intensity)),
+		duration / 4)
+	tween.tween_property(cam, "position", original_pos, duration / 2)
