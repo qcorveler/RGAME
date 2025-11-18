@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=4 uid="uid://bmm0ung1idq1m"]
+[gd_scene load_steps=38 format=4 uid="uid://bmm0ung1idq1m"]
 
 [ext_resource type="Script" uid="uid://bmp4vyb7ac0vk" path="res://Scripts/Level1/level_1.gd" id="1_4dpyx"]
 [ext_resource type="PackedScene" uid="uid://balwv05viq0lw" path="res://Scenes/Personnages/Player/Player.tscn" id="1_tlcug"]
@@ -13,6 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://cwyk0mx15u1w" path="res://Img/Img_Lights/Torch.png" id="8_hwvp3"]
 [ext_resource type="Texture2D" uid="uid://cq3e6coix1uyx" path="res://Img/Tilemaps/simple tile map.png" id="8_u5ghp"]
 [ext_resource type="PackedScene" uid="uid://bcivjodw5wd0w" path="res://Scenes/UI/input_indicator.tscn" id="11_afv7b"]
+[ext_resource type="Script" uid="uid://bh26m0jfmobyv" path="res://Scripts/Util/checkpoint_manager.gd" id="11_k2mw1"]
+[ext_resource type="PackedScene" uid="uid://c5meudsftdr32" path="res://Scenes/Util/checkpoint.tscn" id="12_tjl6l"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cyadu"]
 animations = [{
@@ -280,10 +282,9 @@ position = Vector2(0, 1)
 tile_map_data = PackedByteArray("AAANAAUAAAAFAAEAAAARAAMAAAAAAAQAAAASAAMAAAABAAQAAAATAAMAAAACAAQAAAAMAP//AAAAAAQAAAANAP//AAABAAQAAAAOAP//AAACAAQAAAAaAAMAAAAAAAQAAAAbAAMAAAABAAQAAAAcAAMAAAACAAQAAAAVAAEAAAAFAAEAAAAXAP//AAAFAAEAAAAsAAUAAAAFAAQAAAAsAAQAAAAFAAQAAAAsAAMAAAAFAAQAAAAsAAIAAAAFAAQAAAAsAAEAAAAFAAQAAAAsAAAAAAAFAAQAAAAsAP//AAAFAAQAAAAsAP7/AAAFAAQAAAAsAP3/AAAFAAQAAAAsAPz/AAAFAAQAAAAsAPv/AAAFAAQAAAAsAPr/AAAFAAQAAAAsAPn/AAAFAAQAAAAsAPj/AAAFAAQAAAAuAPj/AAAAAAQAAAAvAPj/AAABAAQAAAAwAPj/AAABAAQAAAAxAPj/AAABAAQAAAAyAPj/AAABAAQAAAAzAPj/AAABAAYAAAAzAPn/AAAFAAQAAAAzAPr/AAAFAAQAAAAzAPv/AAAFAAQAAAAzAPz/AAAFAAQAAAAzAP3/AAAFAAQAAAAzAP7/AAAFAAQAAAAzAP//AAAFAAQAAAAzAAAAAAAGAAYAAAAyAAAAAAABAAQAAAAxAAAAAAABAAQAAAAwAAAAAAAAAAQAAAAuAAQAAAAFAAEAAAAZAP3/AAAAAAQAAAAaAP3/AAABAAQAAAAbAP3/AAABAAQAAAAcAP3/AAABAAQAAAAdAP3/AAABAAQAAAAeAP3/AAABAAQAAAAfAP3/AAABAAQAAAAgAP3/AAACAAQAAAAkAP3/AAAFAAEAAAAoAP3/AAAAAAQAAAApAP3/AAABAAQAAAAqAP3/AAAGAAYAAAAqAPz/AAAFAAQAAAAqAPv/AAAFAAQAAAAqAPr/AAAEAAQAAAAIAPr/AAAAAAQAAAAJAPr/AAABAAQAAAAKAPr/AAACAAQAAAAMAPT/AAAAAAQAAAANAPT/AAABAAQAAAAOAPT/AAACAAQAAAAsAPX/AAAFAAQAAAAsAPT/AAAFAAQAAAAsAPP/AAAFAAQAAAAsAPL/AAAFAAQAAAAsAPH/AAAFAAQAAAAsAPD/AAABAAYAAAAqAPP/AAACAAQAAAApAPP/AAABAAQAAAAoAPP/AAABAAQAAAAnAPP/AAAAAAQAAAArAPD/AAABAAQAAAAqAPD/AAABAAQAAAApAPD/AAABAAQAAAAoAPD/AAAAAAQAAAAVAPP/AAABAAQAAAAWAPP/AAABAAQAAAAXAPP/AAAGAAYAAAAZAPH/AAABAAQAAAAaAPH/AAABAAYAAAAcAPP/AAABAAQAAAAdAPP/AAABAAQAAAAeAPP/AAACAAQAAAATAPP/AAAAAAQAAAAUAPP/AAABAAQAAAAXAPH/AAAAAAYAAAAXAPL/AAAFAAQAAAAYAPH/AAABAAQAAAAaAPL/AAAFAAQAAAAaAPP/AAAFAAYAAAAbAPP/AAABAAQAAAAsAPf/AAAFAAQAAAAsAPb/AAAFAAQAAAA=")
 tile_set = SubResource("TileSet_afv7b")
 
-[node name="TrapLayer" type="TileMapLayer" parent="World/TileMap"]
+[node name="TrapLayer" type="TileMapLayer" parent="World/TileMap" groups=["trap"]]
 position = Vector2(0, 1)
-tile_map_data = PackedByteArray("AAAYAAUAAAAAAAMAAAAZAAUAAAAAAAMAAAAaAAUAAAAAAAMAAAAbAAUAAAAAAAMAAAAcAAUAAAAAAAMAAAAdAAUAAAAAAAMAAAAeAAUAAAAAAAMAAAA=")
-enabled = false
+tile_map_data = PackedByteArray("AAAYAAUAAAAAAAMAAAAZAAUAAAAAAAMAAAAaAAUAAAAAAAMAAAAbAAUAAAAAAAMAAAAcAAUAAAAAAAMAAAAdAAUAAAAAAAMAAAAeAAUAAAAAAAMAAAAdAPz/AAAAAAMAAAAsAO//AAAAAAMAAAA=")
 tile_set = SubResource("TileSet_u5ghp")
 
 [node name="IndicationLayer" type="TileMapLayer" parent="World/TileMap"]
@@ -376,9 +377,10 @@ texture_scale = 0.42
 script = ExtResource("5_5f3p6")
 final_texture_scale = 0.42
 
-[node name="Player" parent="World" instance=ExtResource("1_tlcug")]
-position = Vector2(-9, -5)
+[node name="Player" parent="World" node_paths=PackedStringArray("checkpoint_manager") instance=ExtResource("1_tlcug")]
+position = Vector2(186, 325)
 collision_mask = 11
+checkpoint_manager = NodePath("../CheckpointManager")
 metadata/_edit_group_ = true
 
 [node name="PointLight2D" type="PointLight2D" parent="World/Player"]
@@ -387,6 +389,16 @@ range_item_cull_mask = 3
 texture = ExtResource("4_xgxfi")
 texture_scale = 1.87
 script = ExtResource("5_5f3p6")
+
+[node name="CheckpointManager" type="Node" parent="World" node_paths=PackedStringArray("player")]
+script = ExtResource("11_k2mw1")
+player = NodePath("../Player")
+
+[node name="Checkpoint" parent="World/CheckpointManager" instance=ExtResource("12_tjl6l")]
+position = Vector2(3534, 305)
+
+[node name="Checkpoint2" parent="World/CheckpointManager" instance=ExtResource("12_tjl6l")]
+position = Vector2(2371, 305)
 
 [node name="UI" type="CanvasLayer" parent="."]
 

@@ -3,6 +3,7 @@ extends CharacterBody2D
 @export var gravity := 1600
 @export var speed := 200
 @export var jump_velocity := -700.0
+@export var checkpoint_manager : Node
 
 @export var run_multiplier := 2.0
 @export var crouch_jump_boost := -500
@@ -30,7 +31,8 @@ func _ready() -> void:
 		"idle": $States/Idle,
 		"run": $States/Run,
 		"jump": $States/Jump,
-		"crouch": $States/Crouch
+		"crouch": $States/Crouch,
+		"death": $States/Death
 	}
 
 	for state in states.values():
@@ -54,12 +56,24 @@ func _physics_process(delta) :
 	if current_state :
 		current_state.physics_update(delta)
 	move_and_slide()
+	
+	# Gestion de la mort
+	for i in get_slide_collision_count():
+		var col = get_slide_collision(i)
+		var collider = col.get_collider()
+
+		if collider == null:
+			continue
+			
+		# Test sur la layer 4 ("Trap")
+		if collider.is_in_group("trap"):
+			die()
 
 func _process(delta):
 	if current_state:
 		current_state.update(delta)
 
-func play_animation(anim):
+func play_animation(anim : String):
 	skin.play_anim(anim)
 
 func change_skin(skin_name: String):
@@ -71,7 +85,7 @@ func change_skin(skin_name: String):
 	new_skin.name = "Skin"
 	skin = new_skin
 
-func set_skin_scale(skinScale):
+func set_skin_scale(skinScale : float):
 	skin.apply_scale(Vector2(skinScale, skinScale))
 	collisionStanding.apply_scale(Vector2(skinScale, skinScale))
 	collisionCrouching.apply_scale(Vector2(skinScale, skinScale))
@@ -171,3 +185,6 @@ func shake_camera(intensity: float = 2.0, duration: float = 0.2):
 		original_pos + Vector2(randf_range(-intensity, intensity), randf_range(-intensity, intensity)),
 		duration / 4)
 	tween.tween_property(cam, "position", original_pos, duration / 2)
+
+func die():
+	change_state("death")

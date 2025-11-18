@@ -26,6 +26,11 @@ ParticlesLoader="*res://autoloads/particles_loader.tscn"
 
 window/size/mode=3
 
+[global_group]
+
+trap="Death of the player when contact"
+Player=""
+
 [input]
 
 move_right={

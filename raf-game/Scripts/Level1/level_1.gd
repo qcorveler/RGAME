@@ -30,7 +30,7 @@ func _ready() :
 	
 	# Gestion du joueur
 	player.change_skin("skin_baby_raf")
-	player.position.x = 100
+	player.position.x = 185
 	player.position.y = 200
 	
 	# Gestion du Lama

@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://balwv05viq0lw"]
+[gd_scene load_steps=10 format=3 uid="uid://balwv05viq0lw"]
 
 [ext_resource type="Script" uid="uid://setf7bqajpkw" path="res://Scripts/Player/player.gd" id="1_kpjcp"]
 [ext_resource type="Script" uid="uid://cbbsir1jw5rx" path="res://Scripts/Player/states/idle.gd" id="3_2dvuo"]
 [ext_resource type="Script" uid="uid://c4kcjm36ky11w" path="res://Scripts/Player/states/run.gd" id="4_w526r"]
 [ext_resource type="Script" uid="uid://e3n50f4m2i8m" path="res://Scripts/Player/states/jump.gd" id="5_p4l7q"]
 [ext_resource type="Script" uid="uid://bicgtyxgjcpjb" path="res://Scripts/Player/states/crouch.gd" id="6_df18l"]
+[ext_resource type="Script" uid="uid://ditfi82vxlh8k" path="res://Scripts/Player/states/death.gd" id="7_p4l7q"]
 [ext_resource type="PackedScene" uid="uid://yrty7hjpnhvw" path="res://Scenes/Personnages/Player/Skins/skin_baby_raf.tscn" id="7_w526r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kpjcp"]
@@ -13,7 +14,7 @@ size = Vector2(48, 80)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2dvuo"]
 size = Vector2(48, 100)
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
 script = ExtResource("1_kpjcp")
 
 [node name="Skin" parent="." instance=ExtResource("7_w526r")]
@@ -45,3 +46,6 @@ script = ExtResource("5_p4l7q")
 
 [node name="Crouch" type="Node" parent="States"]
 script = ExtResource("6_df18l")
+
+[node name="Death" type="Node" parent="States"]
+script = ExtResource("7_p4l7q")

@@ -4,7 +4,9 @@
 
 ## TODO
 
-- Gérer les morts
+- Ajouter une animation lors de la mort
+- Réfléchir à une potentielle pénalité lors de la mort
+- Gérer quitter le jeu et revenir à une sauvegarde ?
 
 ## Scénario global
 
