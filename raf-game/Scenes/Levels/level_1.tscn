@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=4 uid="uid://bmm0ung1idq1m"]
+[gd_scene load_steps=39 format=4 uid="uid://bmm0ung1idq1m"]
 
 [ext_resource type="Script" uid="uid://bmp4vyb7ac0vk" path="res://Scripts/Level1/level_1.gd" id="1_4dpyx"]
 [ext_resource type="PackedScene" uid="uid://balwv05viq0lw" path="res://Scenes/Personnages/Player/Player.tscn" id="1_tlcug"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://c74gt60xgsb7d" path="res://Scenes/UI/dialogue_panel.tscn" id="7_jv26f"]
 [ext_resource type="Texture2D" uid="uid://cwyk0mx15u1w" path="res://Img/Img_Lights/Torch.png" id="8_hwvp3"]
 [ext_resource type="Texture2D" uid="uid://cq3e6coix1uyx" path="res://Img/Tilemaps/simple tile map.png" id="8_u5ghp"]
+[ext_resource type="PackedScene" uid="uid://cy8y5aswqsm8q" path="res://Scenes/Objects/light_pickable.tscn" id="9_3628d"]
 [ext_resource type="PackedScene" uid="uid://bcivjodw5wd0w" path="res://Scenes/UI/input_indicator.tscn" id="11_afv7b"]
 [ext_resource type="Script" uid="uid://bh26m0jfmobyv" path="res://Scripts/Util/checkpoint_manager.gd" id="11_k2mw1"]
 [ext_resource type="PackedScene" uid="uid://c5meudsftdr32" path="res://Scenes/Util/checkpoint.tscn" id="12_tjl6l"]
@@ -284,7 +285,7 @@ tile_set = SubResource("TileSet_afv7b")
 
 [node name="TrapLayer" type="TileMapLayer" parent="World/TileMap" groups=["trap"]]
 position = Vector2(0, 1)
-tile_map_data = PackedByteArray("AAAYAAUAAAAAAAMAAAAZAAUAAAAAAAMAAAAaAAUAAAAAAAMAAAAbAAUAAAAAAAMAAAAcAAUAAAAAAAMAAAAdAAUAAAAAAAMAAAAeAAUAAAAAAAMAAAAdAPz/AAAAAAMAAAAsAO//AAAAAAMAAAA=")
+tile_map_data = PackedByteArray("AAAYAAUAAAAAAAMAAAAZAAUAAAAAAAMAAAAaAAUAAAAAAAMAAAAbAAUAAAAAAAMAAAAcAAUAAAAAAAMAAAAdAAUAAAAAAAMAAAAeAAUAAAAAAAMAAAAdAPz/AAAAAAMAAAAsAO//AAAAAAMAAAAWAPL/AAAAAAMAAAA=")
 tile_set = SubResource("TileSet_u5ghp")
 
 [node name="IndicationLayer" type="TileMapLayer" parent="World/TileMap"]
@@ -361,6 +362,20 @@ range_item_cull_mask = 7
 texture = ExtResource("4_xgxfi")
 texture_scale = 0.71
 script = ExtResource("5_5f3p6")
+
+[node name="LightPickable" parent="World" instance=ExtResource("9_3628d")]
+position = Vector2(866, 171)
+scale = Vector2(1.5, 1.5)
+light_increase = 0.5
+metadata/_edit_group_ = true
+
+[node name="PointLight2D" type="PointLight2D" parent="World/LightPickable"]
+color = Color(1, 1, 0.46666667, 1)
+blend_mode = 2
+range_item_cull_mask = 7
+texture = ExtResource("4_xgxfi")
+script = ExtResource("5_5f3p6")
+final_texture_scale = 0.42
 
 [node name="Lama" parent="World" instance=ExtResource("4_cyadu")]
 position = Vector2(-19, -29)

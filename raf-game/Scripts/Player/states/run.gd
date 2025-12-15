@@ -6,7 +6,10 @@ func enter(_previous_state):
 func physics_update(delta):
 	var direction = Input.get_axis("move_left", "move_right")
 	
-	player.skin.set_direction(direction == -1)
+	if direction == -1 :
+		player.skin.set_direction(true)
+	elif direction == 1 :
+		player.skin.set_direction(false)
 	
 	var move_speed = player.speed
 	# Gestion de la course (CTRL)
@@ -23,7 +26,7 @@ func physics_update(delta):
 
 	if direction == 0:
 		player.change_state("idle")
-	elif Input.is_action_pressed("jump") and player.is_on_floor():
+	elif Input.is_action_pressed("jump") and player.is_on_floor() and player.enable_jumping :
 		player.change_state("jump")
-	elif Input.is_action_pressed("crouch"):
+	elif Input.is_action_pressed("crouch") and player.enable_crouching:
 		player.change_state("crouch")

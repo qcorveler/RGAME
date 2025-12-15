@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://by4hv48lgyhg2"]
+[gd_scene load_steps=9 format=3 uid="uid://by4hv48lgyhg2"]
 
 [ext_resource type="Script" uid="uid://setf7bqajpkw" path="res://Scripts/Player/player.gd" id="1_uwy5g"]
 [ext_resource type="PackedScene" uid="uid://csgisq117w3c6" path="res://Scenes/Personnages/Player/Skins/skin_ehpad.tscn" id="2_uwy5g"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://c4kcjm36ky11w" path="res://Scripts/Player/states/run.gd" id="4_dp2h8"]
 [ext_resource type="Script" uid="uid://e3n50f4m2i8m" path="res://Scripts/Player/states/jump.gd" id="5_xh7gd"]
 [ext_resource type="Script" uid="uid://bicgtyxgjcpjb" path="res://Scripts/Player/states/crouch.gd" id="6_fdc6y"]
+[ext_resource type="Script" uid="uid://ditfi82vxlh8k" path="res://Scripts/Player/states/death.gd" id="7_dp2h8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kpjcp"]
 size = Vector2(72, 110)
@@ -44,3 +45,6 @@ script = ExtResource("5_xh7gd")
 
 [node name="Crouch" type="Node" parent="States"]
 script = ExtResource("6_fdc6y")
+
+[node name="Death" type="Node" parent="States"]
+script = ExtResource("7_dp2h8")

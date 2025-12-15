@@ -8,6 +8,8 @@ extends CharacterBody2D
 @export var run_multiplier := 2.0
 @export var crouch_jump_boost := -500
 @export var max_crouch_time := 2.1
+@export var enable_jumping := true
+@export var enable_crouching := true
 
 @export var acceleration = 0.1
 
@@ -185,6 +187,13 @@ func shake_camera(intensity: float = 2.0, duration: float = 0.2):
 		original_pos + Vector2(randf_range(-intensity, intensity), randf_range(-intensity, intensity)),
 		duration / 4)
 	tween.tween_property(cam, "position", original_pos, duration / 2)
+
+func increase_light(value: float) :
+	if has_node("PointLight2D") :
+		var light = $PointLight2D
+		light.final_texture_scale += value
+		print("light increase by : ", value)
+		light.allumage_fini = false
 
 func die():
 	change_state("death")

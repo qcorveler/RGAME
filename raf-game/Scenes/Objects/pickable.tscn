@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://bh128r2g7no52"]
+
+[ext_resource type="Script" uid="uid://btx4kdajf4etw" path="res://Scripts/Objects/pickable.gd" id="1_wdnqu"]
+[ext_resource type="Texture2D" uid="uid://cw5jued3oq188" path="res://Img/Objects/light bulb.png" id="2_a73gw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yilq4"]
+radius = 18.0
+
+[node name="Pickable" type="Area2D"]
+script = ExtResource("1_wdnqu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_yilq4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_a73gw")

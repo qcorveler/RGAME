@@ -94,6 +94,12 @@ player_path = NodePath("../PlayerRafVieux")
 [node name="PlayerRafVieux" parent="World" instance=ExtResource("8_jroud")]
 collision_mask = 3
 speed = 200
+jump_velocity = 0.0
+run_multiplier = 1.0
+crouch_jump_boost = 0
+max_crouch_time = 0.0
+enable_jumping = false
+enable_crouching = false
 metadata/_edit_group_ = true
 
 [node name="UI" type="CanvasLayer" parent="."]

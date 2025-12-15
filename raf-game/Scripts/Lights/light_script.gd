@@ -19,5 +19,6 @@ func _process(delta):
 	if not allumage_fini : 
 		base_energy = lerp(base_energy, final_energy, 0.01)
 		base_texture_scale = lerp(base_texture_scale, final_texture_scale, 0.01)
-		if (base_texture_scale > 0.999) and (base_energy > 0.999):
+		print("allumage : ", base_texture_scale)
+		if (abs(base_texture_scale - final_texture_scale) < 0.001) and (abs(base_energy - final_energy) < 0.001):
 			allumage_fini = true
