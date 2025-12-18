@@ -26,6 +26,7 @@ func _ready() :
 	# Gestion du background
 	var maxX = background.sprite_frames.get_frame_texture("default", 0).get_size().x*background.scale.x
 	var maxY = ground.shape.a.y + 270
+	var minY = maxY - background.sprite_frames.get_frame_texture("default", 0).get_size().y*background.scale.y
 	world.color = Color(0.0, 0.0, 0.0)
 	
 	# Gestion du joueur
@@ -38,7 +39,8 @@ func _ready() :
 	
 	# Gestion de la caméra
 	cam.limit_bottom = maxY
-	cam.limit_right = maxX
+	cam.limit_right = int(maxX)
+	cam.limit_top = minY
 	cam.limit_left = 0
 	
 	# Gestion des premiers dialogues 

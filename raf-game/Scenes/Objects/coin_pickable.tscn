@@ -1,0 +1,12 @@
+[gd_scene load_steps=4 format=3 uid="uid://cnegakrm2ao6o"]
+
+[ext_resource type="PackedScene" uid="uid://bh128r2g7no52" path="res://Scenes/Objects/pickable.tscn" id="1_fthhy"]
+[ext_resource type="Texture2D" uid="uid://cpwb4fcyy87jv" path="res://Img/Objects/Coin.png" id="2_2mv6l"]
+[ext_resource type="Script" uid="uid://dowbnwcxvtyqk" path="res://Scripts/Objects/coin_pickable.gd" id="2_8gdhp"]
+
+[node name="CoinPickable" instance=ExtResource("1_fthhy")]
+script = ExtResource("2_8gdhp")
+
+[node name="Sprite2D" parent="." index="1"]
+scale = Vector2(1.365, 1.365)
+texture = ExtResource("2_2mv6l")
