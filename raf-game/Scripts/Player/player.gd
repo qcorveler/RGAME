@@ -67,8 +67,8 @@ func _physics_process(delta) :
 		if collider == null:
 			continue
 			
-		# Test sur la layer 4 ("Trap")
-		if collider.is_in_group("trap"):
+		# Test sur la layer 4 ("trap")
+		if collider.is_in_group("trap") or collider.is_in_group("enemy"):
 			die()
 
 func _process(delta):

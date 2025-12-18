@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://du418c6qlfu11"]
+
+[ext_resource type="Script" uid="uid://ckwt4wr10uh8j" path="res://Scripts/Enemies/SpikeBall.gd" id="1_po4tn"]
+[ext_resource type="Texture2D" uid="uid://b1lcktswvjita" path="res://Img/Enemies/wheel_pics.png" id="2_dohw5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_esr3x"]
+radius = 11.0
+
+[node name="SpikeBall" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("1_po4tn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("CircleShape2D_esr3x")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+texture = ExtResource("2_dohw5")
+
+[node name="WayPoints" type="Node2D" parent="."]
+
+[node name="Point1" type="Marker2D" parent="WayPoints"]

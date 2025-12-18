@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=4 uid="uid://bmm0ung1idq1m"]
+[gd_scene load_steps=43 format=4 uid="uid://bmm0ung1idq1m"]
 
 [ext_resource type="Script" uid="uid://bmp4vyb7ac0vk" path="res://Scripts/Level1/level_1.gd" id="1_4dpyx"]
 [ext_resource type="PackedScene" uid="uid://balwv05viq0lw" path="res://Scenes/Personnages/Player/Player.tscn" id="1_tlcug"]
@@ -17,6 +17,7 @@
 [ext_resource type="Script" uid="uid://bh26m0jfmobyv" path="res://Scripts/Util/checkpoint_manager.gd" id="11_k2mw1"]
 [ext_resource type="PackedScene" uid="uid://c5meudsftdr32" path="res://Scenes/Util/checkpoint.tscn" id="12_tjl6l"]
 [ext_resource type="PackedScene" uid="uid://cnegakrm2ao6o" path="res://Scenes/Objects/coin_pickable.tscn" id="14_irw6p"]
+[ext_resource type="PackedScene" uid="uid://du418c6qlfu11" path="res://Scenes/Personnages/Enemies/spike_ball.tscn" id="15_31phq"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cyadu"]
 animations = [{
@@ -400,7 +401,7 @@ tile_set = SubResource("TileSet_u5ghp")
 
 [node name="IndicationLayer" type="TileMapLayer" parent="World/TileMap"]
 position = Vector2(0, 1)
-tile_map_data = PackedByteArray("AAABAAUAAAACAAMAAAARAAIAAAAGAAMAAAATAAIAAAAAAAUAAAApAAUAAAAFAAMAAAAoAPz/AAAFAAMAAAAMAP7/AAAGAAMAAAAKAPn/AAAAAAUAAAAOAPP/AAACAAMAAAAeAPL/AAACAAMAAAAcAPL/AAAFAAMAAAAXAAQAAAAAAAUAAAA1APn/AAACAAMAAAA=")
+tile_map_data = PackedByteArray("AAABAAUAAAACAAMAAAARAAIAAAAGAAMAAAATAAIAAAAAAAUAAAApAAUAAAAFAAMAAAAoAPz/AAAFAAMAAAAMAP7/AAAGAAMAAAAKAPn/AAAAAAUAAAAOAPP/AAACAAMAAAAeAPL/AAACAAMAAAAcAPL/AAAFAAMAAAAXAAQAAAAAAAUAAAA1APn/AAACAAMAAABAAPL/AAACAAMAAABpAP7/AAABAAMAAABkAOf/AAADAAMAAAAtANH/AAADAAMAAAAFAMz/AAAEAAMAAABRAOP/AAAGAAMAAAAbAPz/AAAGAAMAAAA=")
 tile_set = SubResource("TileSet_7r2dd")
 script = ExtResource("5_7r2dd")
 
@@ -675,6 +676,42 @@ metadata/_edit_group_ = true
 position = Vector2(1767, -239)
 metadata/_edit_group_ = true
 
+[node name="CoinPickable60" parent="World/CoinManager" instance=ExtResource("14_irw6p")]
+position = Vector2(1025, -912)
+metadata/_edit_group_ = true
+
+[node name="CoinPickable61" parent="World/CoinManager" instance=ExtResource("14_irw6p")]
+position = Vector2(1128, -958)
+metadata/_edit_group_ = true
+
+[node name="CoinPickable62" parent="World/CoinManager" instance=ExtResource("14_irw6p")]
+position = Vector2(1599, -1041)
+metadata/_edit_group_ = true
+
+[node name="CoinPickable63" parent="World/CoinManager" instance=ExtResource("14_irw6p")]
+position = Vector2(2036, -1081)
+metadata/_edit_group_ = true
+
+[node name="CoinPickable64" parent="World/CoinManager" instance=ExtResource("14_irw6p")]
+position = Vector2(2106, -1205)
+metadata/_edit_group_ = true
+
+[node name="CoinPickable65" parent="World/CoinManager" instance=ExtResource("14_irw6p")]
+position = Vector2(2196, -1306)
+metadata/_edit_group_ = true
+
+[node name="CoinPickable66" parent="World/CoinManager" instance=ExtResource("14_irw6p")]
+position = Vector2(2317, -1241)
+metadata/_edit_group_ = true
+
+[node name="CoinPickable67" parent="World/CoinManager" instance=ExtResource("14_irw6p")]
+position = Vector2(2443, -1007)
+metadata/_edit_group_ = true
+
+[node name="CoinPickable68" parent="World/CoinManager" instance=ExtResource("14_irw6p")]
+position = Vector2(2512, -910)
+metadata/_edit_group_ = true
+
 [node name="CoinPickable9" parent="World/CoinManager" instance=ExtResource("14_irw6p")]
 position = Vector2(2656, 304)
 metadata/_edit_group_ = true
@@ -879,6 +916,46 @@ metadata/_edit_group_ = true
 position = Vector2(176, -2148)
 metadata/_edit_group_ = true
 
+[node name="SpikeBall2" parent="World" groups=["enemy"] instance=ExtResource("15_31phq")]
+position = Vector2(5983, -1560)
+scale = Vector2(2, 2)
+metadata/_edit_group_ = true
+
+[node name="CharacterBody2D" parent="World/SpikeBall2" index="0" groups=["enemy"]]
+change_rotation_direction = true
+
+[node name="Point1" parent="World/SpikeBall2/WayPoints" index="0"]
+position = Vector2(-59, 1)
+
+[node name="Point2" type="Marker2D" parent="World/SpikeBall2/WayPoints" index="1"]
+position = Vector2(-59, 54.5)
+
+[node name="Point3" type="Marker2D" parent="World/SpikeBall2/WayPoints" index="2"]
+position = Vector2(59, 54.5)
+
+[node name="Point4" type="Marker2D" parent="World/SpikeBall2/WayPoints" index="3"]
+position = Vector2(59, 1)
+
+[node name="SpikeBall3" parent="World" groups=["enemy"] instance=ExtResource("15_31phq")]
+position = Vector2(5601, -1688)
+scale = Vector2(2, 2)
+
+[node name="CharacterBody2D" parent="World/SpikeBall3" index="0" groups=["enemy"]]
+position = Vector2(31.5, 54.5)
+change_rotation_direction = true
+
+[node name="Point1" parent="World/SpikeBall3/WayPoints" index="0"]
+position = Vector2(-59, 1)
+
+[node name="Point2" type="Marker2D" parent="World/SpikeBall3/WayPoints" index="1"]
+position = Vector2(-59, 54.5)
+
+[node name="Point3" type="Marker2D" parent="World/SpikeBall3/WayPoints" index="2"]
+position = Vector2(59, 54.5)
+
+[node name="Point4" type="Marker2D" parent="World/SpikeBall3/WayPoints" index="3"]
+position = Vector2(59, 1)
+
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="InputIndicator" parent="UI" instance=ExtResource("11_afv7b")]
@@ -893,3 +970,6 @@ offset_bottom = -1.0
 visible = false
 
 [connection signal="final_position_reached" from="World/Lama" to="." method="_on_lama_final_position_reached"]
+
+[editable path="World/SpikeBall2"]
+[editable path="World/SpikeBall3"]
