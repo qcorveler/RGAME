@@ -192,8 +192,10 @@ func increase_light(value: float) :
 	if has_node("PointLight2D") :
 		var light = $PointLight2D
 		light.final_texture_scale += value
-		print("light increase by : ", value)
 		light.allumage_fini = false
+
+func increase_coins(value: int) :
+	GameState.coins += value
 
 func die():
 	change_state("death")

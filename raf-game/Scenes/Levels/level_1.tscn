@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=4 uid="uid://bmm0ung1idq1m"]
+[gd_scene load_steps=42 format=4 uid="uid://bmm0ung1idq1m"]
 
 [ext_resource type="Script" uid="uid://bmp4vyb7ac0vk" path="res://Scripts/Level1/level_1.gd" id="1_4dpyx"]
 [ext_resource type="PackedScene" uid="uid://balwv05viq0lw" path="res://Scenes/Personnages/Player/Player.tscn" id="1_tlcug"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://bcivjodw5wd0w" path="res://Scenes/UI/input_indicator.tscn" id="11_afv7b"]
 [ext_resource type="Script" uid="uid://bh26m0jfmobyv" path="res://Scripts/Util/checkpoint_manager.gd" id="11_k2mw1"]
 [ext_resource type="PackedScene" uid="uid://c5meudsftdr32" path="res://Scenes/Util/checkpoint.tscn" id="12_tjl6l"]
+[ext_resource type="PackedScene" uid="uid://cnegakrm2ao6o" path="res://Scenes/Objects/coin_pickable.tscn" id="14_irw6p"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cyadu"]
 animations = [{
@@ -472,118 +473,6 @@ texture = ExtResource("4_xgxfi")
 texture_scale = 0.71
 script = ExtResource("5_5f3p6")
 
-[node name="LightPickable" parent="World" instance=ExtResource("9_3628d")]
-position = Vector2(3199.0002, -888)
-scale = Vector2(2, 2)
-light_increase = 0.5
-metadata/_edit_group_ = true
-
-[node name="PointLight2D" type="PointLight2D" parent="World/LightPickable"]
-color = Color(1, 1, 0.46666667, 1)
-blend_mode = 2
-range_item_cull_mask = 7
-texture = ExtResource("4_xgxfi")
-script = ExtResource("5_5f3p6")
-final_texture_scale = 0.42
-
-[node name="LightPickable2" parent="World" instance=ExtResource("9_3628d")]
-position = Vector2(4768, -181)
-scale = Vector2(2, 2)
-light_increase = 0.5
-metadata/_edit_group_ = true
-
-[node name="PointLight2D" type="PointLight2D" parent="World/LightPickable2"]
-color = Color(1, 1, 0.46666667, 1)
-blend_mode = 2
-range_item_cull_mask = 7
-texture = ExtResource("4_xgxfi")
-script = ExtResource("5_5f3p6")
-final_texture_scale = 0.42
-
-[node name="LightPickable3" parent="World" instance=ExtResource("9_3628d")]
-position = Vector2(3249, -1383)
-scale = Vector2(2, 2)
-light_increase = 0.5
-metadata/_edit_group_ = true
-
-[node name="PointLight2D" type="PointLight2D" parent="World/LightPickable3"]
-color = Color(1, 1, 0.46666667, 1)
-blend_mode = 2
-range_item_cull_mask = 7
-texture = ExtResource("4_xgxfi")
-script = ExtResource("5_5f3p6")
-final_texture_scale = 0.42
-
-[node name="LightPickable4" parent="World" instance=ExtResource("9_3628d")]
-position = Vector2(5602, -2190)
-scale = Vector2(2, 2)
-light_increase = 0.5
-metadata/_edit_group_ = true
-
-[node name="PointLight2D" type="PointLight2D" parent="World/LightPickable4"]
-color = Color(1, 1, 0.46666667, 1)
-blend_mode = 2
-range_item_cull_mask = 7
-texture = ExtResource("4_xgxfi")
-script = ExtResource("5_5f3p6")
-final_texture_scale = 0.42
-
-[node name="LightPickable5" parent="World" instance=ExtResource("9_3628d")]
-position = Vector2(6963, -2568)
-scale = Vector2(2, 2)
-light_increase = 0.5
-metadata/_edit_group_ = true
-
-[node name="PointLight2D" type="PointLight2D" parent="World/LightPickable5"]
-color = Color(1, 1, 0.46666667, 1)
-blend_mode = 2
-range_item_cull_mask = 7
-texture = ExtResource("4_xgxfi")
-script = ExtResource("5_5f3p6")
-final_texture_scale = 0.42
-
-[node name="LightPickable6" parent="World" instance=ExtResource("9_3628d")]
-position = Vector2(6710, -232)
-scale = Vector2(2, 2)
-light_increase = 0.5
-metadata/_edit_group_ = true
-
-[node name="PointLight2D" type="PointLight2D" parent="World/LightPickable6"]
-color = Color(1, 1, 0.46666667, 1)
-blend_mode = 2
-range_item_cull_mask = 7
-texture = ExtResource("4_xgxfi")
-script = ExtResource("5_5f3p6")
-final_texture_scale = 0.42
-
-[node name="LightPickable7" parent="World" instance=ExtResource("9_3628d")]
-position = Vector2(178, -1931)
-scale = Vector2(2, 2)
-light_increase = 0.5
-metadata/_edit_group_ = true
-
-[node name="PointLight2D" type="PointLight2D" parent="World/LightPickable7"]
-color = Color(1, 1, 0.46666667, 1)
-blend_mode = 2
-range_item_cull_mask = 7
-texture = ExtResource("4_xgxfi")
-script = ExtResource("5_5f3p6")
-final_texture_scale = 0.42
-
-[node name="LightPickable8" parent="World" instance=ExtResource("9_3628d")]
-position = Vector2(2076, -3408)
-scale = Vector2(2, 2)
-light_increase = 0.5
-metadata/_edit_group_ = true
-
-[node name="PointLight2D" type="PointLight2D" parent="World/LightPickable8"]
-color = Color(1, 1, 0.46666667, 1)
-blend_mode = 2
-range_item_cull_mask = 7
-texture = ExtResource("4_xgxfi")
-script = ExtResource("5_5f3p6")
-final_texture_scale = 0.42
-
 [node name="Lama" parent="World" instance=ExtResource("4_cyadu")]
 position = Vector2(-19, -29)
 scale = Vector2(3, 3)
@@ -630,6 +519,365 @@ position = Vector2(6554, -143)
 
 [node name="Checkpoint5" parent="World/CheckpointManager" instance=ExtResource("12_tjl6l")]
 position = Vector2(2983, -3028)
+
+[node name="Checkpoint6" parent="World/CheckpointManager" instance=ExtResource("12_tjl6l")]
+position = Vector2(6460, -1614)
+
+[node name="LightPickableManager" type="Node" parent="World"]
+
+[node name="LightPickable" parent="World/LightPickableManager" instance=ExtResource("9_3628d")]
+position = Vector2(3199.0002, -888)
+scale = Vector2(2, 2)
+light_increase = 0.5
+metadata/_edit_group_ = true
+
+[node name="PointLight2D" type="PointLight2D" parent="World/LightPickableManager/LightPickable"]
+color = Color(1, 1, 0.46666667, 1)
+blend_mode = 2
+range_item_cull_mask = 7
+texture = ExtResource("4_xgxfi")
+script = ExtResource("5_5f3p6")
+final_texture_scale = 0.42
+
+[node name="LightPickable2" parent="World/LightPickableManager" instance=ExtResource("9_3628d")]
+position = Vector2(4768, -181)
+scale = Vector2(2, 2)
+light_increase = 0.5
+metadata/_edit_group_ = true
+
+[node name="PointLight2D" type="PointLight2D" parent="World/LightPickableManager/LightPickable2"]
+color = Color(1, 1, 0.46666667, 1)
+blend_mode = 2
+range_item_cull_mask = 7
+texture = ExtResource("4_xgxfi")
+script = ExtResource("5_5f3p6")
+final_texture_scale = 0.42
+
+[node name="LightPickable3" parent="World/LightPickableManager" instance=ExtResource("9_3628d")]
+position = Vector2(3249, -1383)
+scale = Vector2(2, 2)
+light_increase = 0.5
+metadata/_edit_group_ = true
+
+[node name="PointLight2D" type="PointLight2D" parent="World/LightPickableManager/LightPickable3"]
+color = Color(1, 1, 0.46666667, 1)
+blend_mode = 2
+range_item_cull_mask = 7
+texture = ExtResource("4_xgxfi")
+script = ExtResource("5_5f3p6")
+final_texture_scale = 0.42
+
+[node name="LightPickable4" parent="World/LightPickableManager" instance=ExtResource("9_3628d")]
+position = Vector2(5602, -2190)
+scale = Vector2(2, 2)
+light_increase = 0.5
+metadata/_edit_group_ = true
+
+[node name="PointLight2D" type="PointLight2D" parent="World/LightPickableManager/LightPickable4"]
+color = Color(1, 1, 0.46666667, 1)
+blend_mode = 2
+range_item_cull_mask = 7
+texture = ExtResource("4_xgxfi")
+script = ExtResource("5_5f3p6")
+final_texture_scale = 0.42
+
+[node name="LightPickable5" parent="World/LightPickableManager" instance=ExtResource("9_3628d")]
+position = Vector2(6963, -2568)
+scale = Vector2(2, 2)
+light_increase = 0.5
+metadata/_edit_group_ = true
+
+[node name="PointLight2D" type="PointLight2D" parent="World/LightPickableManager/LightPickable5"]
+color = Color(1, 1, 0.46666667, 1)
+blend_mode = 2
+range_item_cull_mask = 7
+texture = ExtResource("4_xgxfi")
+script = ExtResource("5_5f3p6")
+final_texture_scale = 0.42
+
+[node name="LightPickable6" parent="World/LightPickableManager" instance=ExtResource("9_3628d")]
+position = Vector2(6710, -232)
+scale = Vector2(2, 2)
+light_increase = 0.5
+metadata/_edit_group_ = true
+
+[node name="PointLight2D" type="PointLight2D" parent="World/LightPickableManager/LightPickable6"]
+color = Color(1, 1, 0.46666667, 1)
+blend_mode = 2
+range_item_cull_mask = 7
+texture = ExtResource("4_xgxfi")
+script = ExtResource("5_5f3p6")
+final_texture_scale = 0.42
+
+[node name="LightPickable7" parent="World/LightPickableManager" instance=ExtResource("9_3628d")]
+position = Vector2(178, -1931)
+scale = Vector2(2, 2)
+light_increase = 0.5
+metadata/_edit_group_ = true
+
+[node name="PointLight2D" type="PointLight2D" parent="World/LightPickableManager/LightPickable7"]
+color = Color(1, 1, 0.46666667, 1)
+blend_mode = 2
+range_item_cull_mask = 7
+texture = ExtResource("4_xgxfi")
+script = ExtResource("5_5f3p6")
+final_texture_scale = 0.42
+
+[node name="LightPickable8" parent="World/LightPickableManager" instance=ExtResource("9_3628d")]
+position = Vector2(2076, -3408)
+scale = Vector2(2, 2)
+light_increase = 0.5
+metadata/_edit_group_ = true
+
+[node name="PointLight2D" type="PointLight2D" parent="World/LightPickableManager/LightPickable8"]
+color = Color(1, 1, 0.46666667, 1)
+blend_mode = 2
+range_item_cull_mask = 7
+texture = ExtResource("4_xgxfi")
+script = ExtResource("5_5f3p6")
+final_texture_scale = 0.42
+
+[node name="CoinPickable23" parent="World/LightPickableManager" instance=ExtResource("14_irw6p")]
+position = Vector2(6883, -743)
+metadata/_edit_group_ = true
+
+[node name="CoinManager" type="Node" parent="World"]
+
+[node name="CoinPickable" parent="World/CoinManager" instance=ExtResource("14_irw6p")]
+position = Vector2(1762, 154)
+metadata/_edit_group_ = true
+
+[node name="CoinPickable2" parent="World/CoinManager" instance=ExtResource("14_irw6p")]
+position = Vector2(2719, -438)
+metadata/_edit_group_ = true
+
+[node name="CoinPickable3" parent="World/CoinManager" instance=ExtResource("14_irw6p")]
+position = Vector2(2336, -233)
+metadata/_edit_group_ = true
+
+[node name="CoinPickable4" parent="World/CoinManager" instance=ExtResource("14_irw6p")]
+position = Vector2(2017, -228)
+metadata/_edit_group_ = true
+
+[node name="CoinPickable5" parent="World/CoinManager" instance=ExtResource("14_irw6p")]
+position = Vector2(1963, -295)
+metadata/_edit_group_ = true
+
+[node name="CoinPickable6" parent="World/CoinManager" instance=ExtResource("14_irw6p")]
+position = Vector2(1889, -329)
+metadata/_edit_group_ = true
+
+[node name="CoinPickable7" parent="World/CoinManager" instance=ExtResource("14_irw6p")]
+position = Vector2(1823, -294)
+metadata/_edit_group_ = true
+
+[node name="CoinPickable8" parent="World/CoinManager" instance=ExtResource("14_irw6p")]
+position = Vector2(1767, -239)
+metadata/_edit_group_ = true
+
+[node name="CoinPickable9" parent="World/CoinManager" instance=ExtResource("14_irw6p")]
+position = Vector2(2656, 304)
+metadata/_edit_group_ = true
+
+[node name="CoinPickable10" parent="World/CoinManager" instance=ExtResource("14_irw6p")]
+position = Vector2(2721, -503)
+metadata/_edit_group_ = true
+
+[node name="CoinPickable11" parent="World/CoinManager" instance=ExtResource("14_irw6p")]
+position = Vector2(2723, -572)
+metadata/_edit_group_ = true
+
+[node name="CoinPickable12" parent="World/CoinManager" instance=ExtResource("14_irw6p")]
+position = Vector2(2728, -897)
+metadata/_edit_group_ = true
+
+[node name="CoinPickable13" parent="World/CoinManager" instance=ExtResource("14_irw6p")]
+position = Vector2(2654, -896)
+metadata/_edit_group_ = true
+
+[node name="CoinPickable14" parent="World/CoinManager" instance=ExtResource("14_irw6p")]
+position = Vector2(3812, -1286)
+metadata/_edit_group_ = true
+
+[node name="CoinPickable15" parent="World/CoinManager" instance=ExtResource("14_irw6p")]
+position = Vector2(3874, -1286)
+metadata/_edit_group_ = true
+
+[node name="CoinPickable16" parent="World/CoinManager" instance=ExtResource("14_irw6p")]
+position = Vector2(3937, -1287)
+metadata/_edit_group_ = true
+
+[node name="CoinPickable17" parent="World/CoinManager" instance=ExtResource("14_irw6p")]
+position = Vector2(4704, -442)
+metadata/_edit_group_ = true
+
+[node name="CoinPickable18" parent="World/CoinManager" instance=ExtResource("14_irw6p")]
+position = Vector2(4833, -443)
+metadata/_edit_group_ = true
+
+[node name="CoinPickable19" parent="World/CoinManager" instance=ExtResource("14_irw6p")]
+position = Vector2(5150, -885)
+metadata/_edit_group_ = true
+
+[node name="CoinPickable20" parent="World/CoinManager" instance=ExtResource("14_irw6p")]
+position = Vector2(5864, -810)
+metadata/_edit_group_ = true
+
+[node name="CoinPickable21" parent="World/CoinManager" instance=ExtResource("14_irw6p")]
+position = Vector2(6060, -604)
+metadata/_edit_group_ = true
+
+[node name="CoinPickable22" parent="World/CoinManager" instance=ExtResource("14_irw6p")]
+position = Vector2(6256, -413)
+metadata/_edit_group_ = true
+
+[node name="CoinPickable23" parent="World/CoinManager" instance=ExtResource("14_irw6p")]
+position = Vector2(6951, -2815)
+metadata/_edit_group_ = true
+
+[node name="CoinPickable24" parent="World/CoinManager" instance=ExtResource("14_irw6p")]
+position = Vector2(6628, -422)
+metadata/_edit_group_ = true
+
+[node name="CoinPickable25" parent="World/CoinManager" instance=ExtResource("14_irw6p")]
+position = Vector2(6631, -1122)
+metadata/_edit_group_ = true
+
+[node name="CoinPickable26" parent="World/CoinManager" instance=ExtResource("14_irw6p")]
+position = Vector2(6877, -1510)
+metadata/_edit_group_ = true
+
+[node name="CoinPickable27" parent="World/CoinManager" instance=ExtResource("14_irw6p")]
+position = Vector2(6876, -2348)
+metadata/_edit_group_ = true
+
+[node name="CoinPickable28" parent="World/CoinManager" instance=ExtResource("14_irw6p")]
+position = Vector2(7041, -2816)
+metadata/_edit_group_ = true
+
+[node name="CoinPickable29" parent="World/CoinManager" instance=ExtResource("14_irw6p")]
+position = Vector2(7129, -2815)
+metadata/_edit_group_ = true
+
+[node name="CoinPickable30" parent="World/CoinManager" instance=ExtResource("14_irw6p")]
+position = Vector2(6207, -1687)
+metadata/_edit_group_ = true
+
+[node name="CoinPickable31" parent="World/CoinManager" instance=ExtResource("14_irw6p")]
+position = Vector2(5989, -1826)
+metadata/_edit_group_ = true
+
+[node name="CoinPickable32" parent="World/CoinManager" instance=ExtResource("14_irw6p")]
+position = Vector2(5616, -1925)
+metadata/_edit_group_ = true
+
+[node name="CoinPickable33" parent="World/CoinManager" instance=ExtResource("14_irw6p")]
+position = Vector2(5025, -2216)
+metadata/_edit_group_ = true
+
+[node name="CoinPickable34" parent="World/CoinManager" instance=ExtResource("14_irw6p")]
+position = Vector2(4578, -2289)
+metadata/_edit_group_ = true
+
+[node name="CoinPickable35" parent="World/CoinManager" instance=ExtResource("14_irw6p")]
+position = Vector2(4577, -2345)
+metadata/_edit_group_ = true
+
+[node name="CoinPickable36" parent="World/CoinManager" instance=ExtResource("14_irw6p")]
+position = Vector2(4131, -2230)
+metadata/_edit_group_ = true
+
+[node name="CoinPickable37" parent="World/CoinManager" instance=ExtResource("14_irw6p")]
+position = Vector2(3681, -2469)
+metadata/_edit_group_ = true
+
+[node name="CoinPickable38" parent="World/CoinManager" instance=ExtResource("14_irw6p")]
+position = Vector2(3364, -2733)
+metadata/_edit_group_ = true
+
+[node name="CoinPickable39" parent="World/CoinManager" instance=ExtResource("14_irw6p")]
+position = Vector2(2982, -3081)
+metadata/_edit_group_ = true
+
+[node name="CoinPickable40" parent="World/CoinManager" instance=ExtResource("14_irw6p")]
+position = Vector2(2983, -3029)
+metadata/_edit_group_ = true
+
+[node name="CoinPickable41" parent="World/CoinManager" instance=ExtResource("14_irw6p")]
+position = Vector2(2980, -2976)
+metadata/_edit_group_ = true
+
+[node name="CoinPickable42" parent="World/CoinManager" instance=ExtResource("14_irw6p")]
+position = Vector2(2116, -2668)
+metadata/_edit_group_ = true
+
+[node name="CoinPickable43" parent="World/CoinManager" instance=ExtResource("14_irw6p")]
+position = Vector2(2176, -3220)
+metadata/_edit_group_ = true
+
+[node name="CoinPickable44" parent="World/CoinManager" instance=ExtResource("14_irw6p")]
+position = Vector2(1383, -2983)
+metadata/_edit_group_ = true
+
+[node name="CoinPickable45" parent="World/CoinManager" instance=ExtResource("14_irw6p")]
+position = Vector2(1582, -2913)
+metadata/_edit_group_ = true
+
+[node name="CoinPickable46" parent="World/CoinManager" instance=ExtResource("14_irw6p")]
+position = Vector2(1778, -2841)
+metadata/_edit_group_ = true
+
+[node name="CoinPickable47" parent="World/CoinManager" instance=ExtResource("14_irw6p")]
+position = Vector2(1192, -3046)
+metadata/_edit_group_ = true
+
+[node name="CoinPickable48" parent="World/CoinManager" instance=ExtResource("14_irw6p")]
+position = Vector2(997, -3123)
+metadata/_edit_group_ = true
+
+[node name="CoinPickable49" parent="World/CoinManager" instance=ExtResource("14_irw6p")]
+position = Vector2(806, -3188)
+metadata/_edit_group_ = true
+
+[node name="CoinPickable50" parent="World/CoinManager" instance=ExtResource("14_irw6p")]
+position = Vector2(169, -3153)
+metadata/_edit_group_ = true
+
+[node name="CoinPickable51" parent="World/CoinManager" instance=ExtResource("14_irw6p")]
+position = Vector2(212, -3044)
+metadata/_edit_group_ = true
+
+[node name="CoinPickable52" parent="World/CoinManager" instance=ExtResource("14_irw6p")]
+position = Vector2(260, -2923)
+metadata/_edit_group_ = true
+
+[node name="CoinPickable53" parent="World/CoinManager" instance=ExtResource("14_irw6p")]
+position = Vector2(215, -2788)
+metadata/_edit_group_ = true
+
+[node name="CoinPickable54" parent="World/CoinManager" instance=ExtResource("14_irw6p")]
+position = Vector2(158, -2673)
+metadata/_edit_group_ = true
+
+[node name="CoinPickable55" parent="World/CoinManager" instance=ExtResource("14_irw6p")]
+position = Vector2(97, -2559)
+metadata/_edit_group_ = true
+
+[node name="CoinPickable56" parent="World/CoinManager" instance=ExtResource("14_irw6p")]
+position = Vector2(161, -2455)
+metadata/_edit_group_ = true
+
+[node name="CoinPickable57" parent="World/CoinManager" instance=ExtResource("14_irw6p")]
+position = Vector2(202, -2358)
+metadata/_edit_group_ = true
+
+[node name="CoinPickable58" parent="World/CoinManager" instance=ExtResource("14_irw6p")]
+position = Vector2(199, -2248)
+metadata/_edit_group_ = true
+
+[node name="CoinPickable59" parent="World/CoinManager" instance=ExtResource("14_irw6p")]
+position = Vector2(176, -2148)
+metadata/_edit_group_ = true
 
 [node name="UI" type="CanvasLayer" parent="."]
 

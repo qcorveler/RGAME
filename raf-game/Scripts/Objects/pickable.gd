@@ -41,5 +41,5 @@ func play_sound():
 		
 func destroy():
 	var tw := create_tween()
-	tw.tween_property(self, "scale", Vector2.ZERO, 0.15)
+	tw.tween_property(self, "scale", Vector2.ZERO, 0.05)
 	tw.tween_callback(queue_free)
