@@ -1,4 +1,5 @@
 extends Node2D
+class_name PlayerSkin
 
 @onready var skin : AnimatedSprite2D = $SkinSprite
 

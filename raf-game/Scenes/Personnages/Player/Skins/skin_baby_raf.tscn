@@ -1,7 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://yrty7hjpnhvw"]
+[gd_scene load_steps=24 format=3 uid="uid://yrty7hjpnhvw"]
 
 [ext_resource type="Script" uid="uid://ca7vk1r2fiib5" path="res://Scripts/Player/skin.gd" id="1_7kfym"]
 [ext_resource type="Texture2D" uid="uid://cvguhmh88crex" path="res://Img/Skins/BabyRaf_crouchCharging.png" id="2_7kfym"]
+[ext_resource type="Texture2D" uid="uid://b10t3enlha64f" path="res://Img/Skins/BabyRafDying.png" id="3_uqo0j"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uqo0j"]
 atlas = ExtResource("2_7kfym")
@@ -30,6 +31,34 @@ region = Rect2(18, 54, 18, 27)
 [sub_resource type="AtlasTexture" id="AtlasTexture_3icwi"]
 atlas = ExtResource("2_7kfym")
 region = Rect2(36, 54, 18, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wsb21"]
+atlas = ExtResource("3_uqo0j")
+region = Rect2(18, 54, 18, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_baix0"]
+atlas = ExtResource("3_uqo0j")
+region = Rect2(36, 54, 18, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ulddf"]
+atlas = ExtResource("3_uqo0j")
+region = Rect2(54, 54, 18, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yy5o8"]
+atlas = ExtResource("3_uqo0j")
+region = Rect2(72, 54, 18, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0j4ir"]
+atlas = ExtResource("3_uqo0j")
+region = Rect2(0, 81, 18, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ru38g"]
+atlas = ExtResource("3_uqo0j")
+region = Rect2(18, 81, 18, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4d4p8"]
+atlas = ExtResource("3_uqo0j")
+region = Rect2(36, 81, 18, 27)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5jk1c"]
 atlas = ExtResource("2_7kfym")
@@ -81,6 +110,32 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_wsb21")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_baix0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ulddf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yy5o8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0j4ir")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ru38g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4d4p8")
+}],
+"loop": false,
+"name": &"die",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_5jk1c")
 }, {
 "duration": 1.0,
@@ -116,5 +171,7 @@ script = ExtResource("1_7kfym")
 [node name="SkinSprite" type="AnimatedSprite2D" parent="."]
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_siin0")
-animation = &"crouch"
+animation = &"die"
 autoplay = "idle"
+frame = 6
+frame_progress = 1.0

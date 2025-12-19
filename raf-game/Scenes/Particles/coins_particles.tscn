@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://dicwx75ibtd40"]
+
+[ext_resource type="Texture2D" uid="uid://cpwb4fcyy87jv" path="res://Img/Objects/Coin.png" id="1_jgcdd"]
+[ext_resource type="Script" uid="uid://byrgg5kuneh3a" path="res://Scripts/particles/coins_particles.gd" id="2_7rmk2"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_7rmk2"]
+particle_flag_disable_z = true
+direction = Vector3(0, -1, 0)
+spread = 50.96
+initial_velocity_min = 288.96
+initial_velocity_max = 431.81998
+gravity = Vector3(0, 900, 0)
+damping_min = 100.00001
+damping_max = 100.00001
+scale_min = 2.0
+scale_max = 3.01
+
+[node name="CoinsParticles" type="GPUParticles2D"]
+emitting = false
+amount = 2
+texture = ExtResource("1_jgcdd")
+one_shot = true
+explosiveness = 0.9
+randomness = 0.2
+process_material = SubResource("ParticleProcessMaterial_7rmk2")
+script = ExtResource("2_7rmk2")

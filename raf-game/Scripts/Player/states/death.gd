@@ -5,7 +5,8 @@ func enter(_previous_state):
 
 func physics_update(delta):
 	# Joue une animation
-	
+	player.play_animation("die")
+	await player.skin.skin.animation_finished
 	# Quand l'animation est finie 
 	player.global_position = player.checkpoint_manager.last_location
 	player.change_state("idle")

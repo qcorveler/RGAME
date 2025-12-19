@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://balwv05viq0lw"]
+[gd_scene load_steps=14 format=3 uid="uid://balwv05viq0lw"]
 
 [ext_resource type="Script" uid="uid://setf7bqajpkw" path="res://Scripts/Player/player.gd" id="1_kpjcp"]
 [ext_resource type="AudioStream" uid="uid://4hw5jmnngtsa" path="res://Sounds/jump.wav" id="2_1gak2"]
@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://bn251m1huq3yi" path="res://Sounds/jump_boost.wav" id="3_2x0q7"]
 [ext_resource type="AudioStream" uid="uid://bugdypne8p3mq" path="res://Sounds/hitHurt.wav" id="4_rbbo0"]
 [ext_resource type="Script" uid="uid://c4kcjm36ky11w" path="res://Scripts/Player/states/run.gd" id="4_w526r"]
+[ext_resource type="AudioStream" uid="uid://c8e3lh4q4m80w" path="res://Sounds/pickupCoin.wav" id="5_2x0q7"]
 [ext_resource type="Script" uid="uid://e3n50f4m2i8m" path="res://Scripts/Player/states/jump.gd" id="5_p4l7q"]
 [ext_resource type="Script" uid="uid://bicgtyxgjcpjb" path="res://Scripts/Player/states/crouch.gd" id="6_df18l"]
 [ext_resource type="Script" uid="uid://ditfi82vxlh8k" path="res://Scripts/Player/states/death.gd" id="7_p4l7q"]
@@ -22,6 +23,7 @@ script = ExtResource("1_kpjcp")
 jump_sound = ExtResource("2_1gak2")
 jump_boost_sound = ExtResource("3_2x0q7")
 death_sound = ExtResource("4_rbbo0")
+drop_coins_sound = ExtResource("5_2x0q7")
 
 [node name="Skin" parent="." instance=ExtResource("7_w526r")]
 

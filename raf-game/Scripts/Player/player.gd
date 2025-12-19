@@ -17,8 +17,9 @@ class_name Player
 @export var jump_sound : AudioStream
 @export var jump_boost_sound : AudioStream
 @export var death_sound : AudioStream
+@export var drop_coins_sound : AudioStream
 
-@onready var skin = $Skin
+@onready var skin : PlayerSkin = $Skin
 @onready var collisionStanding : CollisionShape2D = $CollisionStanding
 @onready var collisionCrouching : CollisionShape2D = $CollisionCrouching
 @onready var soundPlayer : AudioStreamPlayer = $AudioStreamPlayer
@@ -26,6 +27,7 @@ class_name Player
 static var JUMP_BOOST_SOUND : String = "jump_boost"
 static var JUMP_SOUND : String = "jump"
 static var DEATH_SOUND : String = "death"
+static var DROP_COINS_SOUND : String = "drop_coins"
 
 var states = {}
 var current_state: State
@@ -93,14 +95,22 @@ func play_sound(sound : String):
 		JUMP_SOUND :
 			if jump_sound :
 				soundPlayer.stream = jump_sound
+				soundPlayer.set_volume_linear(0.5)
 				soundPlayer.play()
 		JUMP_BOOST_SOUND :
 			if jump_boost_sound :
+				soundPlayer.set_volume_linear(1)
 				soundPlayer.stream = jump_boost_sound
 				soundPlayer.play()
 		DEATH_SOUND :
 			if death_sound :
+				soundPlayer.set_volume_linear(1)
 				soundPlayer.stream = death_sound
+				soundPlayer.play()
+		DROP_COINS_SOUND :
+			if drop_coins_sound :
+				soundPlayer.set_volume_linear(1)
+				soundPlayer.stream = drop_coins_sound
 				soundPlayer.play()
 
 func change_skin(skin_name: String):
@@ -190,8 +200,12 @@ func spawn_jump_dust():
 	dust.play_dust()
 	
 func spawn_coin_animation():
-	pass
-
+	var coin = ParticlesLoader.load_particle("coins_particles")
+	coin.global_position = $JumpDustMarker.global_position
+	get_tree().current_scene.add_child(coin)
+	play_sound(DROP_COINS_SOUND)
+	coin.play_coin_particle()
+	
 func shake(intensity: float = 1.0, duration: float = 0.2):
 	var tween = create_tween()
 	var original_pos = global_position
@@ -229,6 +243,5 @@ func die():
 	if(current_state != states["death"]) :
 		GameState.coins = max(0, GameState.coins-GameState.coins_penalty_on_death)
 		spawn_coin_animation()
-		play_sound("death")
-		print("die_function_called")
+		play_sound(DEATH_SOUND)
 		change_state("death")
