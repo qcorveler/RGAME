@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=4 uid="uid://bmm0ung1idq1m"]
+[gd_scene load_steps=44 format=4 uid="uid://bmm0ung1idq1m"]
 
 [ext_resource type="Script" uid="uid://bmp4vyb7ac0vk" path="res://Scripts/Level1/level_1.gd" id="1_4dpyx"]
 [ext_resource type="PackedScene" uid="uid://balwv05viq0lw" path="res://Scenes/Personnages/Player/Player.tscn" id="1_tlcug"]
@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://c5meudsftdr32" path="res://Scenes/Util/checkpoint.tscn" id="12_tjl6l"]
 [ext_resource type="PackedScene" uid="uid://cnegakrm2ao6o" path="res://Scenes/Objects/coin_pickable.tscn" id="14_irw6p"]
 [ext_resource type="PackedScene" uid="uid://du418c6qlfu11" path="res://Scenes/Personnages/Enemies/spike_ball.tscn" id="15_31phq"]
+[ext_resource type="PackedScene" uid="uid://bnqhh0dpd5edj" path="res://Scenes/UI/coins_label.tscn" id="18_7hll7"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cyadu"]
 animations = [{
@@ -916,45 +917,387 @@ metadata/_edit_group_ = true
 position = Vector2(176, -2148)
 metadata/_edit_group_ = true
 
-[node name="SpikeBall2" parent="World" groups=["enemy"] instance=ExtResource("15_31phq")]
+[node name="SpikeBallManager" type="Node" parent="World"]
+
+[node name="SpikeBall2" parent="World/SpikeBallManager" groups=["enemy"] instance=ExtResource("15_31phq")]
 position = Vector2(5983, -1560)
 scale = Vector2(2, 2)
 metadata/_edit_group_ = true
 
-[node name="CharacterBody2D" parent="World/SpikeBall2" index="0" groups=["enemy"]]
+[node name="CharacterBody2D" parent="World/SpikeBallManager/SpikeBall2" index="0" groups=["enemy"]]
 change_rotation_direction = true
 
-[node name="Point1" parent="World/SpikeBall2/WayPoints" index="0"]
+[node name="Point1" parent="World/SpikeBallManager/SpikeBall2/WayPoints" index="0"]
 position = Vector2(-59, 1)
 
-[node name="Point2" type="Marker2D" parent="World/SpikeBall2/WayPoints" index="1"]
+[node name="Point2" type="Marker2D" parent="World/SpikeBallManager/SpikeBall2/WayPoints" index="1"]
 position = Vector2(-59, 54.5)
 
-[node name="Point3" type="Marker2D" parent="World/SpikeBall2/WayPoints" index="2"]
+[node name="Point3" type="Marker2D" parent="World/SpikeBallManager/SpikeBall2/WayPoints" index="2"]
 position = Vector2(59, 54.5)
 
-[node name="Point4" type="Marker2D" parent="World/SpikeBall2/WayPoints" index="3"]
+[node name="Point4" type="Marker2D" parent="World/SpikeBallManager/SpikeBall2/WayPoints" index="3"]
 position = Vector2(59, 1)
 
-[node name="SpikeBall3" parent="World" groups=["enemy"] instance=ExtResource("15_31phq")]
+[node name="SpikeBall3" parent="World/SpikeBallManager" groups=["enemy"] instance=ExtResource("15_31phq")]
 position = Vector2(5601, -1688)
 scale = Vector2(2, 2)
+metadata/_edit_group_ = true
 
-[node name="CharacterBody2D" parent="World/SpikeBall3" index="0" groups=["enemy"]]
+[node name="CharacterBody2D" parent="World/SpikeBallManager/SpikeBall3" index="0" groups=["enemy"]]
 position = Vector2(31.5, 54.5)
 change_rotation_direction = true
 
-[node name="Point1" parent="World/SpikeBall3/WayPoints" index="0"]
+[node name="Point1" parent="World/SpikeBallManager/SpikeBall3/WayPoints" index="0"]
 position = Vector2(-59, 1)
 
-[node name="Point2" type="Marker2D" parent="World/SpikeBall3/WayPoints" index="1"]
+[node name="Point2" type="Marker2D" parent="World/SpikeBallManager/SpikeBall3/WayPoints" index="1"]
 position = Vector2(-59, 54.5)
 
-[node name="Point3" type="Marker2D" parent="World/SpikeBall3/WayPoints" index="2"]
+[node name="Point3" type="Marker2D" parent="World/SpikeBallManager/SpikeBall3/WayPoints" index="2"]
 position = Vector2(59, 54.5)
 
-[node name="Point4" type="Marker2D" parent="World/SpikeBall3/WayPoints" index="3"]
+[node name="Point4" type="Marker2D" parent="World/SpikeBallManager/SpikeBall3/WayPoints" index="3"]
 position = Vector2(59, 1)
+
+[node name="SpikeBall4" parent="World/SpikeBallManager" groups=["enemy"] instance=ExtResource("15_31phq")]
+position = Vector2(5215, -1817)
+scale = Vector2(2, 2)
+metadata/_edit_group_ = true
+
+[node name="CharacterBody2D" parent="World/SpikeBallManager/SpikeBall4" index="0" groups=["enemy"]]
+position = Vector2(59, 24)
+change_rotation_direction = true
+
+[node name="Point1" parent="World/SpikeBallManager/SpikeBall4/WayPoints" index="0"]
+position = Vector2(-59, 1)
+
+[node name="Point2" type="Marker2D" parent="World/SpikeBallManager/SpikeBall4/WayPoints" index="1"]
+position = Vector2(-59, 54.5)
+
+[node name="Point3" type="Marker2D" parent="World/SpikeBallManager/SpikeBall4/WayPoints" index="2"]
+position = Vector2(59, 54.5)
+
+[node name="Point4" type="Marker2D" parent="World/SpikeBallManager/SpikeBall4/WayPoints" index="3"]
+position = Vector2(59, 1)
+
+[node name="SpikeBall5" parent="World/SpikeBallManager" groups=["enemy"] instance=ExtResource("15_31phq")]
+position = Vector2(3638, -2344)
+scale = Vector2(2, 2)
+metadata/_edit_group_ = true
+
+[node name="CharacterBody2D" parent="World/SpikeBallManager/SpikeBall5" index="0" groups=["enemy"]]
+position = Vector2(13.5, -56)
+change_rotation_direction = true
+
+[node name="Point1" parent="World/SpikeBallManager/SpikeBall5/WayPoints" index="0"]
+position = Vector2(-6, -56)
+
+[node name="Point2" type="Marker2D" parent="World/SpikeBallManager/SpikeBall5/WayPoints" index="1"]
+position = Vector2(-6, 62)
+
+[node name="Point3" type="Marker2D" parent="World/SpikeBallManager/SpikeBall5/WayPoints" index="2"]
+position = Vector2(48, 62)
+
+[node name="Point4" type="Marker2D" parent="World/SpikeBallManager/SpikeBall5/WayPoints" index="3"]
+position = Vector2(48, -56)
+
+[node name="SpikeBall6" parent="World/SpikeBallManager" groups=["enemy"] instance=ExtResource("15_31phq")]
+position = Vector2(3318, -2600)
+scale = Vector2(2, 2)
+metadata/_edit_group_ = true
+
+[node name="CharacterBody2D" parent="World/SpikeBallManager/SpikeBall6" index="0" groups=["enemy"]]
+position = Vector2(48, 41)
+change_rotation_direction = true
+
+[node name="Point1" parent="World/SpikeBallManager/SpikeBall6/WayPoints" index="0"]
+position = Vector2(-6, -56)
+
+[node name="Point2" type="Marker2D" parent="World/SpikeBallManager/SpikeBall6/WayPoints" index="1"]
+position = Vector2(-6, 62)
+
+[node name="Point3" type="Marker2D" parent="World/SpikeBallManager/SpikeBall6/WayPoints" index="2"]
+position = Vector2(48, 62)
+
+[node name="Point4" type="Marker2D" parent="World/SpikeBallManager/SpikeBall6/WayPoints" index="3"]
+position = Vector2(48, -56)
+
+[node name="SpikeBall7" parent="World/SpikeBallManager" groups=["enemy"] instance=ExtResource("15_31phq")]
+position = Vector2(1192, -2911)
+scale = Vector2(2, 2)
+metadata/_edit_group_ = true
+
+[node name="CharacterBody2D" parent="World/SpikeBallManager/SpikeBall7" index="0" groups=["enemy"]]
+position = Vector2(285.5, 67.5)
+
+[node name="Point1" parent="World/SpikeBallManager/SpikeBall7/WayPoints" index="0"]
+position = Vector2(343, 67.5)
+
+[node name="Point2" type="Marker2D" parent="World/SpikeBallManager/SpikeBall7/WayPoints" index="1"]
+position = Vector2(343, 121.5)
+
+[node name="Point3" type="Marker2D" parent="World/SpikeBallManager/SpikeBall7/WayPoints" index="2"]
+position = Vector2(225, 121.5)
+
+[node name="Point4" type="Marker2D" parent="World/SpikeBallManager/SpikeBall7/WayPoints" index="3"]
+position = Vector2(225, 89.5)
+
+[node name="Point5" type="Marker2D" parent="World/SpikeBallManager/SpikeBall7/WayPoints" index="4"]
+position = Vector2(129, 89.5)
+
+[node name="Point6" type="Marker2D" parent="World/SpikeBallManager/SpikeBall7/WayPoints" index="5"]
+position = Vector2(129, 57.5)
+
+[node name="Point7" type="Marker2D" parent="World/SpikeBallManager/SpikeBall7/WayPoints" index="6"]
+position = Vector2(33, 57.5)
+
+[node name="Point8" type="Marker2D" parent="World/SpikeBallManager/SpikeBall7/WayPoints" index="7"]
+position = Vector2(33, 25.5)
+
+[node name="Point9" type="Marker2D" parent="World/SpikeBallManager/SpikeBall7/WayPoints" index="8"]
+position = Vector2(-63, 25.5)
+
+[node name="Point10" type="Marker2D" parent="World/SpikeBallManager/SpikeBall7/WayPoints" index="9"]
+position = Vector2(-63, -6.5)
+
+[node name="Point11" type="Marker2D" parent="World/SpikeBallManager/SpikeBall7/WayPoints" index="10"]
+position = Vector2(-159, -6.5)
+
+[node name="Point12" type="Marker2D" parent="World/SpikeBallManager/SpikeBall7/WayPoints" index="11"]
+position = Vector2(-159, -38.5)
+
+[node name="Point13" type="Marker2D" parent="World/SpikeBallManager/SpikeBall7/WayPoints" index="12"]
+position = Vector2(-255, -38.5)
+
+[node name="Point14" type="Marker2D" parent="World/SpikeBallManager/SpikeBall7/WayPoints" index="13"]
+position = Vector2(-255, -70.5)
+
+[node name="Point15" type="Marker2D" parent="World/SpikeBallManager/SpikeBall7/WayPoints" index="14"]
+position = Vector2(-351, -70.5)
+
+[node name="Point16" type="Marker2D" parent="World/SpikeBallManager/SpikeBall7/WayPoints" index="15"]
+position = Vector2(-351, -124.5)
+
+[node name="Point17" type="Marker2D" parent="World/SpikeBallManager/SpikeBall7/WayPoints" index="16"]
+position = Vector2(-233, -124.5)
+
+[node name="Point18" type="Marker2D" parent="World/SpikeBallManager/SpikeBall7/WayPoints" index="17"]
+position = Vector2(-233, -92.5)
+
+[node name="Point19" type="Marker2D" parent="World/SpikeBallManager/SpikeBall7/WayPoints" index="18"]
+position = Vector2(-137, -92.5)
+
+[node name="Point20" type="Marker2D" parent="World/SpikeBallManager/SpikeBall7/WayPoints" index="19"]
+position = Vector2(-137, -60.5)
+
+[node name="Point21" type="Marker2D" parent="World/SpikeBallManager/SpikeBall7/WayPoints" index="20"]
+position = Vector2(-41, -60.5)
+
+[node name="Point22" type="Marker2D" parent="World/SpikeBallManager/SpikeBall7/WayPoints" index="21"]
+position = Vector2(-41, -28.5)
+
+[node name="Point23" type="Marker2D" parent="World/SpikeBallManager/SpikeBall7/WayPoints" index="22"]
+position = Vector2(55, -28.5)
+
+[node name="Point24" type="Marker2D" parent="World/SpikeBallManager/SpikeBall7/WayPoints" index="23"]
+position = Vector2(55, 3.5)
+
+[node name="Point25" type="Marker2D" parent="World/SpikeBallManager/SpikeBall7/WayPoints" index="24"]
+position = Vector2(151, 3.5)
+
+[node name="Point26" type="Marker2D" parent="World/SpikeBallManager/SpikeBall7/WayPoints" index="25"]
+position = Vector2(151, 35.5)
+
+[node name="Point27" type="Marker2D" parent="World/SpikeBallManager/SpikeBall7/WayPoints" index="26"]
+position = Vector2(247, 35.5)
+
+[node name="Point28" type="Marker2D" parent="World/SpikeBallManager/SpikeBall7/WayPoints" index="27"]
+position = Vector2(247, 67.5)
+
+[node name="SpikeBall8" parent="World/SpikeBallManager" groups=["enemy"] instance=ExtResource("15_31phq")]
+position = Vector2(1192, -2911)
+scale = Vector2(2, 2)
+metadata/_edit_group_ = true
+
+[node name="CharacterBody2D" parent="World/SpikeBallManager/SpikeBall8" index="0" groups=["enemy"]]
+position = Vector2(-335, -100)
+
+[node name="Point1" parent="World/SpikeBallManager/SpikeBall8/WayPoints" index="0"]
+position = Vector2(343, 67.5)
+
+[node name="Point2" type="Marker2D" parent="World/SpikeBallManager/SpikeBall8/WayPoints" index="1"]
+position = Vector2(343, 121.5)
+
+[node name="Point3" type="Marker2D" parent="World/SpikeBallManager/SpikeBall8/WayPoints" index="2"]
+position = Vector2(225, 121.5)
+
+[node name="Point4" type="Marker2D" parent="World/SpikeBallManager/SpikeBall8/WayPoints" index="3"]
+position = Vector2(225, 89.5)
+
+[node name="Point5" type="Marker2D" parent="World/SpikeBallManager/SpikeBall8/WayPoints" index="4"]
+position = Vector2(129, 89.5)
+
+[node name="Point6" type="Marker2D" parent="World/SpikeBallManager/SpikeBall8/WayPoints" index="5"]
+position = Vector2(129, 57.5)
+
+[node name="Point7" type="Marker2D" parent="World/SpikeBallManager/SpikeBall8/WayPoints" index="6"]
+position = Vector2(33, 57.5)
+
+[node name="Point8" type="Marker2D" parent="World/SpikeBallManager/SpikeBall8/WayPoints" index="7"]
+position = Vector2(33, 25.5)
+
+[node name="Point9" type="Marker2D" parent="World/SpikeBallManager/SpikeBall8/WayPoints" index="8"]
+position = Vector2(-63, 25.5)
+
+[node name="Point10" type="Marker2D" parent="World/SpikeBallManager/SpikeBall8/WayPoints" index="9"]
+position = Vector2(-63, -6.5)
+
+[node name="Point11" type="Marker2D" parent="World/SpikeBallManager/SpikeBall8/WayPoints" index="10"]
+position = Vector2(-159, -6.5)
+
+[node name="Point12" type="Marker2D" parent="World/SpikeBallManager/SpikeBall8/WayPoints" index="11"]
+position = Vector2(-159, -38.5)
+
+[node name="Point13" type="Marker2D" parent="World/SpikeBallManager/SpikeBall8/WayPoints" index="12"]
+position = Vector2(-255, -38.5)
+
+[node name="Point14" type="Marker2D" parent="World/SpikeBallManager/SpikeBall8/WayPoints" index="13"]
+position = Vector2(-255, -70.5)
+
+[node name="Point15" type="Marker2D" parent="World/SpikeBallManager/SpikeBall8/WayPoints" index="14"]
+position = Vector2(-351, -70.5)
+
+[node name="Point16" type="Marker2D" parent="World/SpikeBallManager/SpikeBall8/WayPoints" index="15"]
+position = Vector2(-351, -124.5)
+
+[node name="Point17" type="Marker2D" parent="World/SpikeBallManager/SpikeBall8/WayPoints" index="16"]
+position = Vector2(-233, -124.5)
+
+[node name="Point18" type="Marker2D" parent="World/SpikeBallManager/SpikeBall8/WayPoints" index="17"]
+position = Vector2(-233, -92.5)
+
+[node name="Point19" type="Marker2D" parent="World/SpikeBallManager/SpikeBall8/WayPoints" index="18"]
+position = Vector2(-137, -92.5)
+
+[node name="Point20" type="Marker2D" parent="World/SpikeBallManager/SpikeBall8/WayPoints" index="19"]
+position = Vector2(-137, -60.5)
+
+[node name="Point21" type="Marker2D" parent="World/SpikeBallManager/SpikeBall8/WayPoints" index="20"]
+position = Vector2(-41, -60.5)
+
+[node name="Point22" type="Marker2D" parent="World/SpikeBallManager/SpikeBall8/WayPoints" index="21"]
+position = Vector2(-41, -28.5)
+
+[node name="Point23" type="Marker2D" parent="World/SpikeBallManager/SpikeBall8/WayPoints" index="22"]
+position = Vector2(55, -28.5)
+
+[node name="Point24" type="Marker2D" parent="World/SpikeBallManager/SpikeBall8/WayPoints" index="23"]
+position = Vector2(55, 3.5)
+
+[node name="Point25" type="Marker2D" parent="World/SpikeBallManager/SpikeBall8/WayPoints" index="24"]
+position = Vector2(151, 3.5)
+
+[node name="Point26" type="Marker2D" parent="World/SpikeBallManager/SpikeBall8/WayPoints" index="25"]
+position = Vector2(151, 35.5)
+
+[node name="Point27" type="Marker2D" parent="World/SpikeBallManager/SpikeBall8/WayPoints" index="26"]
+position = Vector2(247, 35.5)
+
+[node name="Point28" type="Marker2D" parent="World/SpikeBallManager/SpikeBall8/WayPoints" index="27"]
+position = Vector2(247, 67.5)
+
+[node name="SpikeBall9" parent="World/SpikeBallManager" groups=["enemy"] instance=ExtResource("15_31phq")]
+position = Vector2(1192, -2911)
+scale = Vector2(2, 2)
+metadata/_edit_group_ = true
+
+[node name="CharacterBody2D" parent="World/SpikeBallManager/SpikeBall9" index="0" groups=["enemy"]]
+position = Vector2(-1100, -311.5)
+
+[node name="Point1" parent="World/SpikeBallManager/SpikeBall9/WayPoints" index="0"]
+position = Vector2(343, 67.5)
+
+[node name="Point2" type="Marker2D" parent="World/SpikeBallManager/SpikeBall9/WayPoints" index="1"]
+position = Vector2(343, 121.5)
+
+[node name="Point3" type="Marker2D" parent="World/SpikeBallManager/SpikeBall9/WayPoints" index="2"]
+position = Vector2(225, 121.5)
+
+[node name="Point4" type="Marker2D" parent="World/SpikeBallManager/SpikeBall9/WayPoints" index="3"]
+position = Vector2(225, 89.5)
+
+[node name="Point5" type="Marker2D" parent="World/SpikeBallManager/SpikeBall9/WayPoints" index="4"]
+position = Vector2(129, 89.5)
+
+[node name="Point6" type="Marker2D" parent="World/SpikeBallManager/SpikeBall9/WayPoints" index="5"]
+position = Vector2(129, 57.5)
+
+[node name="Point7" type="Marker2D" parent="World/SpikeBallManager/SpikeBall9/WayPoints" index="6"]
+position = Vector2(33, 57.5)
+
+[node name="Point8" type="Marker2D" parent="World/SpikeBallManager/SpikeBall9/WayPoints" index="7"]
+position = Vector2(33, 25.5)
+
+[node name="Point9" type="Marker2D" parent="World/SpikeBallManager/SpikeBall9/WayPoints" index="8"]
+position = Vector2(-63, 25.5)
+
+[node name="Point10" type="Marker2D" parent="World/SpikeBallManager/SpikeBall9/WayPoints" index="9"]
+position = Vector2(-63, -6.5)
+
+[node name="Point11" type="Marker2D" parent="World/SpikeBallManager/SpikeBall9/WayPoints" index="10"]
+position = Vector2(-159, -6.5)
+
+[node name="Point12" type="Marker2D" parent="World/SpikeBallManager/SpikeBall9/WayPoints" index="11"]
+position = Vector2(-159, -38.5)
+
+[node name="Point13" type="Marker2D" parent="World/SpikeBallManager/SpikeBall9/WayPoints" index="12"]
+position = Vector2(-255, -38.5)
+
+[node name="Point14" type="Marker2D" parent="World/SpikeBallManager/SpikeBall9/WayPoints" index="13"]
+position = Vector2(-255, -70.5)
+
+[node name="Point15" type="Marker2D" parent="World/SpikeBallManager/SpikeBall9/WayPoints" index="14"]
+position = Vector2(-351, -70.5)
+
+[node name="Point16" type="Marker2D" parent="World/SpikeBallManager/SpikeBall9/WayPoints" index="15"]
+position = Vector2(-351, -124.5)
+
+[node name="Point17" type="Marker2D" parent="World/SpikeBallManager/SpikeBall9/WayPoints" index="16"]
+position = Vector2(-233, -124.5)
+
+[node name="Point18" type="Marker2D" parent="World/SpikeBallManager/SpikeBall9/WayPoints" index="17"]
+position = Vector2(-233, -92.5)
+
+[node name="Point19" type="Marker2D" parent="World/SpikeBallManager/SpikeBall9/WayPoints" index="18"]
+position = Vector2(-137, -92.5)
+
+[node name="Point20" type="Marker2D" parent="World/SpikeBallManager/SpikeBall9/WayPoints" index="19"]
+position = Vector2(-137, -60.5)
+
+[node name="Point21" type="Marker2D" parent="World/SpikeBallManager/SpikeBall9/WayPoints" index="20"]
+position = Vector2(-41, -60.5)
+
+[node name="Point22" type="Marker2D" parent="World/SpikeBallManager/SpikeBall9/WayPoints" index="21"]
+position = Vector2(-41, -28.5)
+
+[node name="Point23" type="Marker2D" parent="World/SpikeBallManager/SpikeBall9/WayPoints" index="22"]
+position = Vector2(55, -28.5)
+
+[node name="Point24" type="Marker2D" parent="World/SpikeBallManager/SpikeBall9/WayPoints" index="23"]
+position = Vector2(55, 3.5)
+
+[node name="Point25" type="Marker2D" parent="World/SpikeBallManager/SpikeBall9/WayPoints" index="24"]
+position = Vector2(151, 3.5)
+
+[node name="Point26" type="Marker2D" parent="World/SpikeBallManager/SpikeBall9/WayPoints" index="25"]
+position = Vector2(151, 35.5)
+
+[node name="Point27" type="Marker2D" parent="World/SpikeBallManager/SpikeBall9/WayPoints" index="26"]
+position = Vector2(247, 35.5)
+
+[node name="Point28" type="Marker2D" parent="World/SpikeBallManager/SpikeBall9/WayPoints" index="27"]
+position = Vector2(247, 67.5)
 
 [node name="UI" type="CanvasLayer" parent="."]
 
@@ -966,10 +1309,18 @@ visible = false
 offset_top = -1.0
 offset_bottom = -1.0
 
+[node name="CoinsLabel" parent="UI" instance=ExtResource("18_7hll7")]
+
 [node name="PauseMenu" parent="UI" instance=ExtResource("3_3mqfk")]
 visible = false
 
 [connection signal="final_position_reached" from="World/Lama" to="." method="_on_lama_final_position_reached"]
 
-[editable path="World/SpikeBall2"]
-[editable path="World/SpikeBall3"]
+[editable path="World/SpikeBallManager/SpikeBall2"]
+[editable path="World/SpikeBallManager/SpikeBall3"]
+[editable path="World/SpikeBallManager/SpikeBall4"]
+[editable path="World/SpikeBallManager/SpikeBall5"]
+[editable path="World/SpikeBallManager/SpikeBall6"]
+[editable path="World/SpikeBallManager/SpikeBall7"]
+[editable path="World/SpikeBallManager/SpikeBall8"]
+[editable path="World/SpikeBallManager/SpikeBall9"]

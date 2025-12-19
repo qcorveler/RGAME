@@ -198,4 +198,5 @@ func increase_coins(value: int) :
 	GameState.coins += value
 
 func die():
+	GameState.coins = max(0, GameState.coins-GameState.coins_penalty_on_death)
 	change_state("death")
