@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name Player
 
 @export var gravity := 1600
 @export var speed := 200
@@ -13,9 +14,18 @@ extends CharacterBody2D
 
 @export var acceleration = 0.1
 
+@export var jump_sound : AudioStream
+@export var jump_boost_sound : AudioStream
+@export var death_sound : AudioStream
+
 @onready var skin = $Skin
 @onready var collisionStanding : CollisionShape2D = $CollisionStanding
 @onready var collisionCrouching : CollisionShape2D = $CollisionCrouching
+@onready var soundPlayer : AudioStreamPlayer = $AudioStreamPlayer
+
+static var JUMP_BOOST_SOUND : String = "jump_boost"
+static var JUMP_SOUND : String = "jump"
+static var DEATH_SOUND : String = "death"
 
 var states = {}
 var current_state: State
@@ -77,6 +87,21 @@ func _process(delta):
 
 func play_animation(anim : String):
 	skin.play_anim(anim)
+
+func play_sound(sound : String):
+	match sound :
+		JUMP_SOUND :
+			if jump_sound :
+				soundPlayer.stream = jump_sound
+				soundPlayer.play()
+		JUMP_BOOST_SOUND :
+			if jump_boost_sound :
+				soundPlayer.stream = jump_boost_sound
+				soundPlayer.play()
+		DEATH_SOUND :
+			if death_sound :
+				soundPlayer.stream = death_sound
+				soundPlayer.play()
 
 func change_skin(skin_name: String):
 	if skin:
@@ -164,6 +189,9 @@ func spawn_jump_dust():
 	get_tree().current_scene.add_child(dust)
 	dust.play_dust()
 	
+func spawn_coin_animation():
+	pass
+
 func shake(intensity: float = 1.0, duration: float = 0.2):
 	var tween = create_tween()
 	var original_pos = global_position
@@ -198,5 +226,9 @@ func increase_coins(value: int) :
 	GameState.coins += value
 
 func die():
-	GameState.coins = max(0, GameState.coins-GameState.coins_penalty_on_death)
-	change_state("death")
+	if(current_state != states["death"]) :
+		GameState.coins = max(0, GameState.coins-GameState.coins_penalty_on_death)
+		spawn_coin_animation()
+		play_sound("death")
+		print("die_function_called")
+		change_state("death")

@@ -1,7 +1,7 @@
 extends Node
 class_name State
 
-var player
+var player : Player
 
 func enter(_previous_state): 
 	pass

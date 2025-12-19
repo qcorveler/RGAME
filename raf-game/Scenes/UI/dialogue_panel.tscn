@@ -5,7 +5,7 @@
 [ext_resource type="FontFile" uid="uid://gkas3n827804" path="res://fonts/PressStart2P-Regular.ttf" id="2_xi5iw"]
 [ext_resource type="PackedScene" uid="uid://bcivjodw5wd0w" path="res://Scenes/UI/input_indicator.tscn" id="3_xi5iw"]
 [ext_resource type="AudioStream" uid="uid://diwuid8emjli4" path="res://Sounds/LetterBip.wav" id="5_1h2o0"]
-[ext_resource type="Script" uid="uid://deyummoc7de3d" path="res://Scripts/bip_sound_player.gd" id="6_o4i36"]
+[ext_resource type="Script" uid="uid://deyummoc7de3d" path="res://Scripts/Sound/bip_sound_player.gd" id="6_o4i36"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_qbsum"]
 font = ExtResource("2_xi5iw")

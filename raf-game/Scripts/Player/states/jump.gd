@@ -7,6 +7,9 @@ func enter(_previous_state):
 		jump_power += player.crouch_jump_boost * charge_ratio
 		player.crouch_timer = 0.0
 		player.spawn_jump_dust()
+		player.play_sound(Player.JUMP_BOOST_SOUND)
+	else :
+		player.play_sound(Player.JUMP_SOUND)
 	player.velocity.y = jump_power
 	player.play_animation("jump")
 
